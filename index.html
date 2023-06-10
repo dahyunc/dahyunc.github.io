@@ -1,78 +1,124 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Dahyun's website</title>
+	  
+	  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158813919-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-158813919-1');
+</script>
+<script type="text/javascript">
+    function toggle_visibility(id) {
+       event.preventDefault();
+       var e = document.getElementById(id);
+       if(e.style.display == 'none')
+          e.style.display = 'block';
+       else
+          e.style.display = 'none';
+    }
+
+</script>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Dahyun choi</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="stylesheets/choi.css">
+	  <link rel="stylesheet" href="stylesheets/kube.css">
+	  <script src="https://kit.fontawesome.com/9745af1226.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--<meta name="viewport" content="width=device-width">-->
+    
+    
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+  
+  
+  
   </head>
   <body>
     <div class="wrapper">
       <header>
         <img src="img/choi_bio.png" alt=""/>
-        <h1>Dahyun Choi</h1>
-        <p>Ph.D. Candidate</p>
-        <p><a href="https://politics.princeton.edu/people/dahyun-choi" target="_blank">Princeton University</a></p>
-        <p>Email: <a href="mailto:dahyunc@princeton.edu"></i>&nbsp; dahyunc@princeton.edu</a></p>
-        <ul>
+        <h4>Dahyun Choi</h4>
+          <!--<p>Ph.D. Candidate</p>-->
+          <p></p>
+         <p class="view">Ph.D. Candidate<br><a href="https://politics.princeton.edu/people/dahyun-choi">Department of Politics</a><br> Princeton University<br><a href="mailto:dahyunc@princeton.edu">dahyunc@princeton.edu</a></p>
+        <p></p>
+
+       <!-- <p><a href="https://politics.princeton.edu/people/dahyun-choi" target="_blank">Princeton University</a></p>
+        <p>Email: <a href="mailto:dahyunc@princeton.edu"></i>&nbsp; dahyunc@princeton.edu</a></p>-->
+       <!--  <ul>
           <li><a href="https://twitter.com/dchoiresearch" target="_blank"><i style="padding-top:.1rem;" class="fab fa-twitter fa-lg"></i> Twitter</a></li>
           <li><a href="https://www.linkedin.com/in/dahyun-choi-4870aa90/">linkedin<strong></strong></a></li>
-          <li><a href="https://github.com/dahyunc" target="_blank"><i style="padding-top:.1rem;" class="fab fa-twitter fa-lg"></i> GitHub</a></li>
+          <li><a href="https://github.com/dahyunc" target="_blank"><i style="padding-top:.1rem;" class="fab fa-twitter fa-lg"></i> GitHub</a></li>-->
         </ul>
       </header>
+      
       <section>
-        <p>Hello! I am a Ph.D. candidate in the Department of Politics at Princeton University, where I am affiliated with the Data-Driven Social Science Initiative (DDSS), the Niehaus Center for Globalization and Governance (NCGG), and the Program for Quantitative and Analytical Political Science (Q-APS). My research interests include the political economy of regulation, information politics, formal and quantitative methodology. With a focus on environmental and trade regulations, my dissertation examines the strategic use of information by business interests.</p> 
+        <p>Hello! I am a Ph.D. candidate in the Department of Politics at Princeton University, where I am affiliated with the Data-Driven Social Science Initiative <a href="https://ddss.princeton.edu/graduate-fellows-social-data-science">(DDSS)</a>, the Niehaus Center for Globalization and Governance <a href="https://niehaus.princeton.edu/">(NCGG)</a>, and the Program for Quantitative and Analytical Political Science <a href="https://qaps.princeton.edu/">(Q-APS)</a>. My research interests include the political economy of regulation, information politics, formal and quantitative methodology. With a focus on environmental and trade regulations, my dissertation examines the strategic use of information by business interests.</p> 
 
         </p>  
         The other stream of my research is related to computational social science. I use machine learning and applied statistical methods to quantify latent concepts in social science and to evaluate measurement quality. 
         </p>
       </p>
      <br>
-        <h2>Working Papers</h2>
-        <dt>Information and regulation politics</dt>
-        <br>
-        <ul>
-            <li><strong><a href='documents/Climate_Info_Environment.pdf' target="_blank">Teaming up with the Enemy: Firms and the
-              Information Environment of Climate Regulations</a> </strong></li>
-              <br>
-            <!--    <ul>
-                <li> Paper presentation at IPES 2022 and EPG Online 2022 
-                <li>User@SHA ref: <a href="https://github.com/mojombo/product/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2" class="commit-link">mojombo@<tt>be6a8cc</tt></a></li> <br> 
-              </ul> -->
-              <li> <strong>Scientification of Politics? Evidence from Environmental Legislation</a></strong></li> 
-              <br>
-              <li> <strong> How Interest Groups Strategically Take Advantage of Voter's Rational Inattention</a></strong></li> 
-          </ul>
-    <dt>Measurement problem </dt>
-        <ul>
-        <br>
-            <li> <strong>Quantifying Informative Signals from Political Texts </strong> (with Brandon Stewart and Denis Peskov)</li>
-            <br>
-             <li><strong>A Measure of Charisma </strong> (with Rocío Titiunik and Christian Baehr)</li> 
-            <br> 
+       <!-- <h2>Working Papers</h2>-->
+       <div align="left"><h3>Working Papers</h3></div>
+  <p>
+  <ol>
+<li>
+<b> <a href="documents/Climate_Info_Environment.pdf"> Teaming Up across Political Divides: Evidence from Climate Regulations</a></b> (Peviously titled <i>Teaming up with the Enemy: Firms and the Information Environment of Climate Regulations)</i>
+<i><a href="#" onclick="toggle_visibility('inheritance');">[Abstract]</a></i>
+<div id="inheritance" style="display:none;"><br> Why do political actors with competing interests work together? This paper argues that winning the ideal policy is purely instrumental as long as they can achieve a higher quality of policy implementation, which makes compromise arise endogenously. Using original data of policy comments on Greenhouse gas emission standards spanning 2010-2020, I reveal the systematic pattern that polluting firms and environmental groups invest in joint efforts to improve policy implementation. The policy outcome is biased in the direction of a high-capacity group (polluting firms) and a low-capacity group (environmental groups) is willing to make concessions to induce quality-enhancing efforts from the former. The analysis further shows that partnering with competing interests has a meaningful impact on a finalized policy outcome. These findings highlight the hidden dynamics of regulatory politics, wherein divergent political goals are reconciled for high-quality policy implementation.</div>
+&nbsp;
+</li>
+<li> <a href="">Quantifying Informative Signals from Political Texts </a></b> (with Brandon Stewart and Denis Peskov)</li>
+<li> Learning from Noise </a></b> (with Perry Carter)</li>
+<li>Scientification of Politics? Evidence from Environmental Legislation </i> 
+
+  <li> How Interest Groups Strategically Take Advantage of Voter's Rational Inattention
+    </a>  <i> </i> 
+
+     <li>A Measure of Charisma(with Rocío Titiunik and Christian Baehr)</li> 
+      
+     
+    </ol>
+  </p>
 
           <!--   <li>The application of sample compexity bounds for social science research (with Perry Carter)</li> -->
-            </ul><br> 
-            <section>
-              <h2>Conferences</h2>
-              <ul>
-                <li>American Political Science Association, 2022,2023</a>
+
+
+  <!--  <div align="left"><h3>Conferences </h3></div>
+  <p>
+  <ol>
+    <li>American Political Science Association, 2022,2023</a>
+      <li>Society for Political Methodology, 2020, 2022, 2023</a>  
+      <li>Climate Pipeline Project, 2023 </a>
+      <li>Midwest Political Science Association, 2022,2023</a>
+      <li>International Studies Association, 2023</a>
+      <li>The International Political Economy Society, 2022</a>
+      <li>Environmental Politics and Governance, Online 2022 </a>-->
+    <!-- <li>Student coordinator, Quantitative Social Science Colloquium weekly speaker seminar</li> -->
+
+
+             <!--    <li>American Political Science Association, 2022,2023</a>
                 <li>Society for Political Methodology, 2020, 2022, 2023</a>  
                 <li>Climate Pipeline Project, 2023 </a>
                 <li>Midwest Political Science Association, 2022,2023</a>
                 <li>International Studies Association, 2023</a>
                 <li>The International Political Economy Society, 2022</a>
                 <li>Environmental Politics and Governance, Online 2022 </a>
-              <!-- <li>Student coordinator, Quantitative Social Science Colloquium weekly speaker seminar</li> 
+              <!-- <li>Student coordinator, Quantitative Social Science Colloquium weekly speaker seminar</li> -->
                
-              <li>Reviewer: Political Analysis, Political Behavior, Political Science Research and Methods</li> <br> -->
-              </ul> <br>
+              <!-- <li>Reviewer: Political Analysis, Political Behavior, Political Science Research and Methods</li> <br> 
+              </ul> <br>-->
             <!--      <section>
                 <h2>Fellowship and Awards</h2>
                 <ul>
@@ -96,30 +142,28 @@
                     DDSS Research Grant 2022</a></li> 
                 <li>Student coordinator, Quantitative Social Science Colloquium weekly speaker seminar</li> 
                  
-                <li>Reviewer: Political Analysis, Political Behavior, Political Science Research and Methods</li> <br> --> 
+                <li>Reviewer: Political Analysis, Political Behavior, Political Science Research and Methods</li> <br> 
                 </ul>
-                <br>      
-
-        <section>
-        <h2>Teaching</h2>
-        <ul>
-          <li>Preceptor, POL 574 Quantitative method, Spring 2022 </li>
-          <br>
-          <blockquote>
-          <p>This is the most advanced graduate-level course in the politics method training sequence. The class covers cutting-edge political science methodologies. </p>
-        </blockquote>  
-          <li>Preceptor, POL 345 Quantitative Social Science, Fall 2021</li>
-          <br>
-          <blockquote>
-          <p>This is the undergraduate-level politics method training sequence. The class covers a variety of topics in statistics and causal inference. </p> 
-        </blockquote>
-          <li>Preceptor, POL 245 Visualizing Data, Summer 2021</li>
-          <br>
-          <blockquote>
-          <p>This is the first course in R and basic statistics for incoming freshmen in Princeton. It is one of the classes offered for <a href="https://fsi.princeton.edu/fsi-experience/academic-experience" target="_blank">Freshman Scholars Institute</a>.</p>
-       <!-- <p><a href='https://drive.google.com/file/d/0BxVg8iXqYmHfMVFNV21sNG01ZEk/view?usp=sharing' target="_blank">Student evaluation</a> -->
-       </blockquote>
-         </ul>
+                <br>      -->
+                <div align="left">
+                  <h3 id="teaching">Teaching</h3>
+                  </div>
+                  <ul class="dashed">
+                    <li> Preceptor, POL 574 Quantitative method (Graduate, Spring 2022) </li>
+                    <i><a href="#" onclick="toggle_visibility('pol574');">[Course Description]</a></i>
+<div id="pol574" style="display:none;"><br>This is the most advanced graduate-level course in the politics method training sequence. The class covers cutting-edge political science methodologies.</div>
+&nbsp;
+                    <li> Preceptor, POL 345 Quantitative Social Science (Undergraduate,Fall 2021) </li>
+                    <i><a href="#" onclick="toggle_visibility('pol345');">[Course Description]</a></i>
+<div id="pol345" style="display:none;"><br>This is the undergraduate-level politics method training sequence. The class covers a variety of topics in statistics and causal inference.</div>
+&nbsp;
+                      
+                    <li> Preceptor, POL 245 Visualizing Data (Undergraduate, Summer 2021)</li>
+                    <i><a href="#" onclick="toggle_visibility('pol245');">[Course Description]</a></i>
+<div id="pol245" style="display:none;"><br>This is the first course in R and basic statistics for incoming freshmen in Princeton. It is one of the classes offered for <a href="https://fsi.princeton.edu/fsi-experience/academic-experience" target="_blank">Freshman Scholars Institute</a></div>
+&nbsp;
+        
+                    </ul>
 
 
   <!--  
@@ -156,6 +200,7 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <script src="/assets/js/scale.fix.js"></script>
+    <!-- <script src="javascripts/scale.fix.js"></script> -->
   </body>
 </html>
