@@ -55,7 +55,8 @@ h4 {
 }
 
 a {
-  color:#3498db;
+  /*color:#3498db;*/
+  color:#9FE2BF;
   font-weight:400;
   text-decoration:none;
 }

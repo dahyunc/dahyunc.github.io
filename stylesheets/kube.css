@@ -128,10 +128,12 @@ body {
   line-height: 1.5; }
 
 a {
-  color: #158df7; }
+  color: #2BAE66FF; 
+}
 
 a:hover {
-  color: #ee2455; }
+  color: #FFA500
+  ; }
 
 h1,
 h2,
