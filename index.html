@@ -6,7 +6,7 @@
     <script>
       function button(id) {
         var x = document.getElementById(id);
-        var ids = ["abs1", "abs2", "abs3", "abs4","abs5" ,"sum1", "sum2", "sum3", "sum5", "sum6"];
+        var ids = ["abs1", "abs2", "abs3", "abs4","abs5" ,"sum1", "sum2", "sum3", "sum5", "sum6", "course1", "course2","course3"];
         for(var i = 0; i < ids.length; i++) {
           var item = ids[i];
           if (item != id) {
@@ -187,23 +187,45 @@
                   <h3>Teaching</h3>
                 
                  
-                  <p style="margin-bottom:0"> Preceptor, POL 574 Quantitative Method IV 
-                    <i><a href="#" onclick="toggle_visibility('pol574');">[GRAD, Spring 2022]</a></i></p> 
+                  <p style="margin-bottom:0"> Preceptor, POL 574 Quantitative Method IV</p>  
+                    <div class="buttonbar">[ 
+                      <!--  <a href="mailto:dahyunc@princeton.edu">email for current draft</a>  -->
+                        <button class="button" onclick="button(&quot;course1&quot;)">GRAD, Spring 2022</button>
+                     ]</div>
+                     <div class="popup" id="course1" style="display:none"> This is the most advanced graduate-level course in the politics method training sequence. The class covers a variety of supervised and unsupervised learning techniques, including both
+                      mechanical and probabilistic models, and computational methods for the analysis of new types of data, including text, networks, audio, and images (instructor: John Londregan).
+                       </div> 
+                     <br>
+
+                   <!--   <i><a href="#" onclick="toggle_visibility('pol574');">[GRAD, Spring 2022]</a></i></p> 
 <div id="pol574" style="display:none;"><br>This is the most advanced graduate-level course in the politics method training sequence. The class covers a variety of supervised and unsupervised learning techniques, including both
   mechanical and probabilistic models, and computational methods for the analysis of new types of data, including text, networks, audio, and images (instructor: John Londregan).</div> 
-  &nbsp; 
+  &nbsp;  -->
 
-                  <p style="margin-bottom:0"> Preceptor, POL 345 Quantitative Social Science
-                    <i><a href="#" onclick="toggle_visibility('pol345');">[UGRD,Fall 2021]</a></i></p> 
+                  <p style="margin-bottom:0"> Preceptor, POL 345 Quantitative Social Science</p> 
+                  <div class="buttonbar">[ 
+                    <button class="button" onclick="button(&quot;course2&quot;)">UGRD, Fall 2021</button>
+                     ]</div>
+                     <div class="popup" id="course2" style="display:none"> This is the undergraduate-level politics method training sequence. The class covers a variety of topics in statistics and causal inference (instructor: Marc Ratkovic).
+                       </div> 
+                     <br>
+
+
+
+
+                      <!--  <i><a href="#" onclick="toggle_visibility('pol345');">[UGRD,Fall 2021]</a></i></p> 
 <div id="pol345" style="display:none;"><br>This is the undergraduate-level politics method training sequence. The class covers a variety of topics in statistics and causal inference (instructor: Marc Ratkovic).</div>
-&nbsp; </li>
+&nbsp; </li>-->
                       
-                  <p style="margin-bottom:0"> Preceptor, POL 245 Visualizing Data
-                    <i><a href="#" onclick="toggle_visibility('pol245');">[UGRD, Summer 2021]</a></i></p> 
-<div id="pol245" style="display:none;"><br>This is the first course in R and basic statistics for incoming freshmen in Princeton. It is one of the classes offered for <a href="https://fsi.princeton.edu/fsi-experience/academic-experience" target="_blank">Freshman Scholars Institute</a> (instructor: Brandon Stewart).</div>
-&nbsp;</li>
+                  <p style="margin-bottom:0"> Preceptor, POL 245 Visualizing Data</p> 
+                  <div class="buttonbar">[ 
+                    <button class="button" onclick="button(&quot;course3&quot;)">UGRD, Summer 2021</button>
+                     ]</div>
+                     <div class="popup" id="course3" style="display:none"> This is the first course in R and basic statistics for incoming freshmen in Princeton. It is one of the classes offered for <a href="https://fsi.princeton.edu/fsi-experience/academic-experience" target="_blank">Freshman Scholars Institute</a> (instructor: Brandon Stewart).
+                       </div> 
+                     <br>
         
-                    </ul>
+                  
 
 
 
