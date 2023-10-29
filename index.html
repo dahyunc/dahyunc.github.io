@@ -27,7 +27,7 @@
 <script>
   function button(id) {
     var x = document.getElementById(id);
-    var ids = ["abs1", "abs2", "abs3", "abs4","abs5" ,"sum1", "sum2", "sum3", "sum5", "sum6", "course1", "course2","course3"];
+    var ids = ["abs1", "abs2", "abs3", "abs4","abs5" ,"sum1", "sum2", "sum3","paperlink","paperlink2", "sum5", "sum6", "course1", "course2","course3"];
     for(var i = 0; i < ids.length; i++) {
       var item = ids[i];
       if (item != id) {
@@ -135,10 +135,12 @@
   <p style="margin-bottom:0; color:#666"><em>(with Brandon Stewart and Denis Peskov). Under Review.</em></p>
   <div class="buttonbar">[ 
     <button class="button" onclick="button(&quot;abs2&quot;)">abstract</button>
+    | <button class="button" onclick="button(&quot;paperlink2&quot;)">paper</button>
    <!-- | <a href="mailto:dahyunc@princeton.edu">email for current draft</a> -->
     | <button class="button" onclick="button(&quot;sum2&quot;)">presentations</button>
   ]</div>
   <div class="popup" id="abs2" style="display:none">How do interest groups use political communication to appeal to the general public? Classical accounts of interest group politics have assumed that interest groups increase voters’ knowledge about policy by informing them of expected consequences or the contents of policy. However, interest groups tend to mix two kinds of signals that are difficult to separate empirically: 1) informative signals that help voters improve political decisions, and 2) persuasive signals that influence the formation of voter preferences but don’t have direct relevance to the substantive question of interest. We create an eight-category typology for these signals and generate high-quality manual annotations of public statements and press releases distributed by interest groups. We develop an automated coding procedure using recently developed large language models, which can classify the presence of signals beyond the capacity of non-expert human coders. Our findings, drawn from illustrative examples of congressional hearings and public advertising, suggest that interest groups strategically tailor the composition of signals under different institutional settings.</div>
+  <div class="popup" id="paperlink2" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div>
   <div class="popup" id="sum2" style="display:none"> <li> 2023 American Political Science Association, Los Angeles</li>
     <li> 2022 Society for Political Methodology, Washington University in St. Louis   </li>
     <li> 2023 International Studies Association,  Montréal</li>
@@ -164,10 +166,12 @@
   <p style="margin-bottom:0"> Scientification of Politics? Interest Group Influence on Bureaucratic Expertise in Climate Change</p>
   <div class="buttonbar">[ 
     <button class="button" onclick="button(&quot;abs3&quot;)">abstract</button>
+    | <button class="button" onclick="button(&quot;paperlink&quot;)">paper</button>
     | <button class="button" onclick="button(&quot;sum6&quot;)">presentations</button>
    <!--  | <a href="" target="_blank">paper</a> -->
   ] </div> 
   <div class="popup" id="abs3" style="display:none">Science is considered the primary source of information that helps regulators improve policy outcomes. However, the use of scientific information is inevitably intertwined with political reasoning. In this paper, I construct a novel dataset revealing the internal practices of science evaluation by the Environmental Protection Agency and examine how suggestions from interest groups influence the way bureaucrats evaluate science.   My empirical evidence shows that scientific studies recommended by industry are more likely to be included in final documents, regardless of subject-normalized scientific impact indicators. Using unsupervised methods, I further show that industry-endorsed scientific studies are more likely to be referenced to justify describing air pollution exposure as having no effect on public health. This paper not only provides suggestive evidence on the internal decision-making of bureaucrats, but also contributes to our understanding of the political influence of interest groups under scientific uncertainty.</div>
+  <div class="popup" id="paperlink" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div>
   <div class="popup" id="sum6" style="display:none"> 
     <li> Princeton Institutions Working Group </li>
     <li> 2023 International Political Economy Society, Georgetown University </li>
