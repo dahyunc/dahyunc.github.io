@@ -27,7 +27,7 @@
 <script>
   function button(id) {
     var x = document.getElementById(id);
-    var ids = ["abs1", "abs2", "abs3", "abs4","abs5" ,"sum1", "sum2", "sum3","paperlink","paperlink2", "sum5", "sum6", "course1", "course2","course3"];
+    var ids = ["abs1", "abs2", "pres1","pres2", "abs3", "abs4", "pres4" , "pres3", "abs5", "pres5", "pres6","pres7" , "sum2",  "sum3","paperlink","paperlink2", "sum5", "sum6", "course1", "course2","course3"];
     for(var i = 0; i < ids.length; i++) {
       var item = ids[i];
       if (item != id) {
@@ -60,7 +60,7 @@
 
        <!--<link rel="stylesheet" href="stylesheets/styles2.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <link rel="stylesheet" href="stylesheets/choi.css">
+    <link rel="stylesheet" href="stylesheets/choi.css"> #48ba47 #00686E #117A65 
 	  <link rel="stylesheet" href="stylesheets/kube.css">
 	  <script src="https://kit.fontawesome.com/9745af1226.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">-->
@@ -101,117 +101,176 @@
       
       <section>
         <p>Hello! I am a Ph.D. candidate in the Department of Politics at Princeton University, where I am affiliated with the <strong><a href="https://ddss.princeton.edu/graduate-fellows-social-data-science">Data-Driven Social Science Initiative</a></strong> and the <strong><a href="https://qaps.princeton.edu/">Program for Quantitative and Analytical Political Science</a></strong>.
-          I work on questions in interest group politics, lobbying, regulation, climate change, and American political institutions, using methods from computational social science and applied statistics. I also develop methodological tools to improve machine learning practices in political science. </p> 
+          I work on questions in interest group politics, lobbying, political economy, and American political institutions, using methods from computational social science and applied statistics. I also develop methodological tools to improve machine learning practices in political science. </p> 
          <!--  My research interests include interest group politics, lobbying and regulations, climate change, corporate political strategy, formal and quantitative methodology. With a focus on environmental policymaking, my dissertation examines the strategic use of information by business interests in a variety of institutional contexts.\
 
         <p>The other stream of my research is related to computational social science. I use machine learning and applied statistical methods to quantify latent concepts in social science. I am also working to develop methodological tools to improve machine learning practices in political science research.</p>
      -->
      <br>
     
+
+     
+
     
-     <h3>Working Papers</h3>
+     <h3>Manuscripts Under Review</h3>
        
        
      <!-- <div align="left"><h3>Working Papers</h3></div>-->
+      <!--| <button class="button" onclick="button(&quot;pres1&quot;)">presentations</button>-->
 
-  <p style="margin-bottom:0"> Teaming Up Across Political Divides: Evidence from Climate Regulations</p>
-  <p style="margin-bottom:0; color:#666"><em>(Previously titled  "Teaming up with the Enemy: Firms and the Information Environment of Climate Regulations."). Under Review.</em></p>
-  <div class="buttonbar">[ 
+  <p style="margin-bottom:0">Teaming Up Across Political Divides: Evidence from Climate Regulations</p>
+  <p style="margin-bottom:0; color:#666; display:inline;"><em>(Previously titled  "Teaming up with the Enemy: Firms and the Information Environment of Climate Regulations.")</em></p> 
+  <span  class="buttonbar"  >[ 
     <button class="button" onclick="button(&quot;abs1&quot;)">abstract</button>
-    | <a href="documents/Climate_Info_Environment_2023.pdf" target="_blank">paper</a> 
-    | <button class="button" onclick="button(&quot;sum1&quot;)">presentations</button>
-  ]</div>
-  <div class="popup" id="abs1" style="display:none">Why do interest groups with contrasting interests and policy goals work together? This paper argues that interest groups prioritize high-quality implementation of policies even when it means compromising on their policy preferences. To test this argument, I introduce original measurement strategies to reveal the systematic patterns in which firms and environmental groups invest in joint efforts to improve the implementation of greenhouse gas emissions standards. The analysis, using public comments spanning 2010-2020, demonstrates that comments written by joint efforts of environmental groups and firms contain more informative text that can contribute to a higher quality of policy implementation, compared to individual efforts alone. While the compromise is biased in the direction of firms' interests, environmental groups can exercise meaningful influence over the finalized policy outcome by inducing more participation from the former. These findings highlight the hidden dynamics of regulatory politics, wherein divergent political goals are reconciled for high-quality policy implementation.</div>
-  <div class="popup" id="sum1" style="display:none"> <li> Frontiers in Money in Politics Research, University of Southern California </li>
+    | <a href="documents/Climate_Info_Environment_20240624.pdf" target="_blank">paper</a> 
+    | <button class="button" onclick="button(&quot;pres1&quot;)">presentations</button>
+  ]</span >
+  <div class="popup" id="abs1" style="display:none">Why do interest groups with contrasting interests and policy goals work together? I present a theory of collaborative policy production and show that interest groups prioritize high-quality implementation of policies even when it means compromising on their policy preferences. To test theoretical results, I introduce original measurement strategies that reveal systematic patterns in which firms and environmental groups invest in joint efforts to improve fine-grained details of policy to achieve the target greenhouse gas emissions. The analysis, using public comments spanning 2010-2020, demonstrates that comments written jointly by environmental groups and firms contain more information that can contribute to the quality of policy implementation than individual efforts alone, despite compromises on policy preferences. These findings highlight the hidden dynamics of regulatory politics, wherein divergent political goals are reconciled for high-quality policy implementation.</div>
+  <div class="popup" id="pres1" style="display:none"> 
+    <li> Political Economy of Climate and the Environment, University of Pennsylvania </li>
+    <li> Frontiers in Money in Politics Research, University of Southern California </li>
     <li> 2023 American Political Science Association, Los Angeles </li>
-    <li> Money in Politics Conference, Copenhagen Business School </li>
+    <li> 2023 Money in Politics Conference, Copenhagen Business School </li>
     <li> Climate Pipeline Project,  Brown University </li>
     <li> 2023 Midwest Political Science Conference, Chicago </li>
     <li> 2022 Environmental Politics and Governance, Virtual conference  </li>
     <li> 2022 International Political Economy Society, University of Pittsburgh </li></div>
+
+  <br>
   <br>
 
-  <p style="margin-bottom:0"> Quantifying Informative Signals from Political Texts</p>
-  <p style="margin-bottom:0; color:#666"><em>(with Brandon Stewart and Denis Peskov). Under Review.</em></p>
-  <div class="buttonbar">[ 
+
+
+
+<p style="margin-bottom:0"> Quantifying Informative Signals from Political Texts</p>
+  <p style="margin-bottom:0; display:inline;color:#666"><em>(with <a href="https://bstewart.scholar.princeton.edu/" style="text-decoration: underline; color: inherit;" target="_blank">Brandon Stewart </a>and <a href="https://denis.ai/" style="text-decoration: underline; color: inherit;" target="_blank">Denis Peskoff)</a></em></p>
+  <span class="buttonbar">[ 
     <button class="button" onclick="button(&quot;abs2&quot;)">abstract</button>
-    | <button class="button" onclick="button(&quot;paperlink2&quot;)">paper</button>
-   <!-- | <a href="mailto:dahyunc@princeton.edu">email for current draft</a> -->
-    | <button class="button" onclick="button(&quot;sum2&quot;)">presentations</button>
-  ]</div>
+    | <a href="https://drive.google.com/file/d/1T7ZhDBSe43WxCmO16ZuE4OuMHLVOHWr2/view?usp=sharing" target="_blank">paper</a> 
+    | <button class="button" onclick="button(&quot;pres2&quot;)">presentations</button> 
+  ]</span>
   <div class="popup" id="abs2" style="display:none">How do interest groups use political communication to appeal to the general public? Classical accounts of interest group politics have assumed that interest groups increase voters’ knowledge about policy by informing them of expected consequences or the contents of policy. However, interest groups tend to mix two kinds of signals that are difficult to separate empirically: 1) informative signals that help voters improve political decisions, and 2) persuasive signals that influence the formation of voter preferences but don’t have direct relevance to the substantive question of interest. We create an eight-category typology for these signals and generate high-quality manual annotations of public statements and press releases distributed by interest groups. We develop an automated coding procedure using recently developed large language models, which can classify the presence of signals beyond the capacity of non-expert human coders. Our findings, drawn from illustrative examples of congressional hearings and public advertising, suggest that interest groups strategically tailor the composition of signals under different institutional settings.</div>
   <div class="popup" id="paperlink2" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div>
-  <div class="popup" id="sum2" style="display:none"> <li> 2023 American Political Science Association, Los Angeles</li>
+  <div class="popup" id="pres2" style="display:none"> <li> 2023 American Political Science Association, Los Angeles</li>
     <li> 2022 Society for Political Methodology, Washington University in St. Louis   </li>
     <li> 2023 International Studies Association,  Montréal</li>
     </div>
+
+  <br>
   <br>
 
 
 
-  <p style="margin-bottom:0"> Learning from Noise: Applying Sample Complexity for Political Science Research </p>
-  <p style="margin-bottom:0; color:#666"><em>(with Perry Carter)</em></p>
-  <div class="buttonbar">[ 
-    <button class="button" onclick="button(&quot;abs5&quot;)">abstract</button>
-    | <a href="documents/learning_noise.pdf" target="_blank">paper</a> 
-    | <button class="button" onclick="button(&quot;sum3&quot;)">presentations</button>
-  ]</div>
-  <div class="popup" id="abs5" style="display:none">Statistical learning increasingly provides a bridge between theoretical concepts and empirical realities in quantitative political science research. However, many concepts of interest to scholars are both highly multidimensional and inherently fuzzy, making manual classification highly error-prone. The consequences of these issues for machine learning applications are not well understood, generating persistent uncertainty over what constitutes good enough data. In this paper, we introduce a novel framework, learning from noise, taking advantage of researcher-specified bounds on conceptual complexity and labeling error to guarantee the sample size necessary to achieve a minimum level of accuracy with a precise level of confidence. We provide the scR R package online, offering a computationally efficient way to implement the proposed methods. While measurement built on clean data with well-defined concepts will always be encouraged, we aim to improve standard practices by providing a general-purpose tool to assess the feasibility of applying statistical learning models.</div>
-  <div class="popup" id="sum3" style="display:none"> <li> 2023 American Political Science Association, Los Angeles</li>
-    <li> 2023 Society for Political Methodology, Stanford University  </li>
-    </div>
-  <br>
-
-
-  <p style="margin-bottom:0"> Scientification of Politics? Interest Group Influence on Bureaucratic Expertise in Climate Change</p>
-  <div class="buttonbar">[ 
+  <p style="margin-bottom:0"> Learning from Noise: Applying Sample Complexity for Social Science Research</p>
+  <p style="margin-bottom:0; display:inline;color:#666"><em>(with <a href="https://pjesscarter.github.io/" style="text-decoration: underline; color: inherit;" target="_blank">Perry Carter</a>)</em></p>
+  <span class="buttonbar">[ 
     <button class="button" onclick="button(&quot;abs3&quot;)">abstract</button>
-    | <button class="button" onclick="button(&quot;paperlink&quot;)">paper</button>
-    | <button class="button" onclick="button(&quot;sum6&quot;)">presentations</button>
+    | <a href="https://osf.io/preprints/osf/evrcj" target="_blank">paper</a> 
+   | <button class="button" onclick="button(&quot;pres3&quot;)">presentations</button> 
+  ]</span>
+  <div class="popup" id="abs3" style="display:none">While statistical learning bridges the gap between theoretical concepts and complex empirical realities, the question of what constitutes ``good enough" data for social scientists remains understudied. In this article, we introduce the Probably Approximately Correct model and present sample complexity bounds, which take advantage of researcher-specified estimates of labeling error to guarantee the sample size required for a minimum level of accuracy. We develop a simulation-based approach to demonstrate its feasibility and provide the scR R package, offering a computationally efficient way to implement the proposed methods. We aim to improve standard practice by providing a general-purpose tool to validate the quality of measures when fuzzy measurement boundaries make generating data with ground-truth labels infeasible. </div>
+    <div class="popup" id="pres3" style="display:none"> <li> 2023 American Political Science Association, Los Angeles</li>
+    <li> 2023 Society for Political Methodology, Stanford University  </li>
+    </div> 
+  <br>
+  <br>
+
+  <br>
+
+
+
+
+
+
+
+
+
+
+  <h3>Working Papers & Work in Progress</h3>
+  <p style="margin-bottom:0; display:inline"> Politics of Academic Experts: Evidence from Antitrust Laws </p>
+  <span style="margin-bottom:0; color:#666"><em>(with <a href="https://www.princeton.edu/~nmccarty/" style="text-decoration: underline; color: inherit;" target="_blank">Nolan McCarty</a>)</em></span>
+  <br>
+  <br>
+
+  <p style="margin-bottom:0; display:inline">  Political Cycle of Government Innovation </p>
+  <span style="margin-bottom:0; color:#666"><em> (with <a href="https://law.duke.edu/fac/defigueiredo" style="text-decoration: underline; color: inherit;" target="_blank">John M. de Figueiredo</a>)</em></span>
+  <br>
+  <br>
+
+
+  <p style="margin-bottom:0; display:inline">  Firms’ Political Response to Regulatory Capacity: Evidence from State-Level Workforce Shocks </p>
+  <span style="margin-bottom:0; display:inline;color:#666"><em>(with <a href="https://kyuwon-lee.github.io/" style="text-decoration: underline; color: inherit;" target="_blank">Kyuwon Lee</a>)</em></span>
+  <span class="buttonbar">[ 
+    <button class="button" onclick="button(&quot;abs4&quot;)">abstract</button>
+   <!-- | <a href="documents/Climate_Info_Environment_2023.pdf" target="_blank">paper</a>  -->
+    | <button class="button" onclick="button(&quot;pres4&quot;)">presentations</button> 
+  ]</span>
+  <div class="popup" id="abs4" style="display:none">How do firms adjust their political activities in response to regulatory agencies’ capacity, and are their behaviors constrained by their surrounding political environments? Empirical scrutiny of these questions has been limited due to endogeneity and lack of comparable cases. We propose using state-level regulatory politics to better address these questions. Using original datasets on the workforce of U.S. state environmental agencies from 2000-2019, we estimate the causal effect of unanticipated workforce shocks that arise from the gap between the actual and appropriated workforce size. We find that regulated firms increase campaign contributions to state legislators and governors while decreasing contributions to House representatives in response to workforce shocks. Ideologically, firms specifically target moderate state legislators over conservative House representatives who are conventionally considered to be their political allies. We also find that state-level restrictions on corporate donations do not significantly curb firms' political responsiveness to workforce shocks. These findings contribute to our understanding of corporate political strategies in regulatory environments.</div>
+   <!--  <div class="popup" id="paperlink2" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div> -->
+  <div class="popup" id="pres4" style="display:none"> <li> 2024 Money in Politics Conference, Copenhagen Business School </li>
+    <li> Conference on Bureaucratic and Interest Group Politics, Princeton University </li>
+    <li> 2024 Midwest Political Science Conference, Chicago</li>
+    </div>
+
+
+
+
+
+  <br>
+  <br>
+  <p style="margin-bottom:0; display:inline"> Scientification of Politics? Interest Group Influence on Bureaucratic Expertise in Climate Change</p>
+  <span class="buttonbar">[ 
+    <button class="button" onclick="button(&quot;abs5&quot;)">abstract</button>
+    | <button class="button" onclick="button(&quot;pres5&quot;)">presentations</button>
    <!--  | <a href="" target="_blank">paper</a> -->
-  ] </div> 
-  <div class="popup" id="abs3" style="display:none">Science is considered the primary source of information that helps regulators improve policy outcomes. However, the use of scientific information is inevitably intertwined with political reasoning. In this paper, I construct a novel dataset revealing the internal practices of science evaluation by the Environmental Protection Agency and examine how suggestions from interest groups influence the way bureaucrats evaluate science.   My empirical evidence shows that scientific studies recommended by industry are more likely to be included in final documents, regardless of subject-normalized scientific impact indicators. Using unsupervised methods, I further show that industry-endorsed scientific studies are more likely to be referenced to justify describing air pollution exposure as having no effect on public health. This paper not only provides suggestive evidence on the internal decision-making of bureaucrats, but also contributes to our understanding of the political influence of interest groups under scientific uncertainty.</div>
+  ] </span>
+  <div class="popup" id="abs5" style="display:none">Science is considered the primary source of information that helps regulators improve policy outcomes. However, the use of scientific information is inevitably intertwined with political reasoning. In this paper, I construct a novel dataset revealing the internal practices of science evaluation by the Environmental Protection Agency and examine how suggestions from interest groups influence the way bureaucrats evaluate science.   My empirical evidence shows that scientific studies recommended by industry are more likely to be included in final documents, regardless of subject-normalized scientific impact indicators. Using unsupervised methods, I further show that industry-endorsed scientific studies are more likely to be referenced to justify describing air pollution exposure as having no effect on public health. This paper not only provides suggestive evidence on the internal decision-making of bureaucrats, but also contributes to our understanding of the political influence of interest groups under scientific uncertainty.</div>
   <div class="popup" id="paperlink" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div>
-  <div class="popup" id="sum6" style="display:none"> 
+  <div class="popup" id="pres5" style="display:none"> 
     <li> Princeton Institutions Working Group </li>
     <li> 2023 International Political Economy Society, Georgetown University </li>
     </div>
   <br>
-
-
-  <p style="margin-bottom:0"> Investing in Team Efforts: When Agents with Contrasting Preferences Collaborate</p>
-  <div class="buttonbar">[ 
-    <button class="button" onclick="button(&quot;abs4&quot;)">abstract</button>
-   <!-- | <a href="mailto:dahyunc@princeton.edu">email for current draft</a> -->
-  ]</div>
-  <div class="popup" id="abs4" style="display:none">I develop a model of policymaking in which policy experts with asymmetric capabilities invest in joint efforts to craft high-quality proposals. While experts may have different policy preferences, they share a common interest: achieving high-quality policy implementation. Agents have asymmetric capabilities and their actions generate outcomes that vary across two dimensions: i) a distributional dimension that reflects how the divergent policy goals of the agents are reconciled, and 2) a quality dimension that represents a set of features that enhance the efficacy or equity of policy implementation. The model demonstrates that winning the ideal policy is purely instrumental as long as experts can achieve a higher quality of policy implementation, which makes compromise arise endogenously.</div>
   <br>
+
+  <p style="margin-bottom:0; display:inline">  Sample Complexity For Open-Ended Survey Responses </p>
+  <span style="margin-bottom:0; color:#666"><em> (with <a href="https://pjesscarter.github.io/" style="text-decoration: underline; color: inherit;" target="_blank">Perry Carter</a> and <a href="https://narrelleg.github.io/" style="text-decoration: underline; color: inherit;" target="_blank">Narrelle Gilchrist</a>)</em></span>
+  <span class="buttonbar">[ 
+    <button class="button" onclick="button(&quot;pres6&quot;)">presentations</button>
+    ] </span>
+    <div class="popup" id="pres6" style="display:none"> 
+      <li> 2024 Society for Political Methodology, UC Riverside </li>
+      </div>
+    <br>
+   <!--  | <a href="" target="_blank">paper</a> -->
+  <br>
+ 
+
 
 
   <p style="margin-bottom:0"> How Interest Groups Strategically Take Advantage of Voter's Rational Inattention</p> 
   <div class="buttonbar">[ 
    <!--  <a href="mailto:dahyunc@princeton.edu">email for current draft</a>  -->
-     <button class="button" onclick="button(&quot;sum5&quot;)">presentations</button>
+     <button class="button" onclick="button(&quot;pres7&quot;)">presentations</button>
   ]</div>
   <div class="popup" id="abs5" style="display:none"></div>
-  <div class="popup" id="sum5" style="display:none"> <li> 2022 Midwest Political Science Conference, Chicago</li>
+  <div class="popup" id="pres7" style="display:none"> <li> 2022 Midwest Political Science Conference, Chicago</li>
     <li> 2020 Society for Political Methodology, Virtual conference  </li>
     </div> 
   <br>
 
   <p style="margin-bottom:0"> A Dataset of Presidential Election Results at the Congressional District Level</p>   
-  <p style="margin-bottom:0; color:#666"><em>(with Rocio Titiunik, Francesca Tang and Christian Baehr)</em></p>    <br><br>  
+  <p style="margin-bottom:0; color:#666"><em>(with <a href="https://titiunik.scholar.princeton.edu/" style="text-decoration: underline; color: inherit;" target="_blank">Rocio Titiunik</a>, <a href="https://www.francescatang.com/" style="text-decoration: underline; color: inherit;" target="_blank">Francesca Tang</a> and <a href="https://christianbaehr.com/" style="text-decoration: underline; color: inherit;" target="_blank">Christian Baehr</a>)</em></p>    <br><br>  
   
 
 
     
               
-                  <h3>Teaching</h3>
+              <!--    <h3>Teaching</h3>
                 
                  
-                  <p style="margin-bottom:0"> Preceptor, POL 574 Quantitative Method IV</p>  
+                    <p style="margin-bottom:0"> Preceptor, POL 574 Quantitative Method IV</p>  
                     <div class="buttonbar">[ 
-                      <!--  <a href="mailto:dahyunc@princeton.edu">email for current draft</a>  -->
                         <button class="button" onclick="button(&quot;course1&quot;)">GRAD, Spring 2022</button>
                      ]</div>
                      <div class="popup" id="course1" style="display:none"> This is the most advanced graduate-level course in the politics method training sequence. The class covers a variety of supervised and unsupervised learning techniques, including both
@@ -219,10 +278,6 @@
                        </div> 
                      <br>
 
-                   <!--   <i><a href="#" onclick="toggle_visibility('pol574');">[GRAD, Spring 2022]</a></i></p> 
-<div id="pol574" style="display:none;"><br>This is the most advanced graduate-level course in the politics method training sequence. The class covers a variety of supervised and unsupervised learning techniques, including both
-  mechanical and probabilistic models, and computational methods for the analysis of new types of data, including text, networks, audio, and images (instructor: John Londregan).</div> 
-  &nbsp;  -->
 
                   <p style="margin-bottom:0"> Preceptor, POL 345 Quantitative Social Science</p> 
                   <div class="buttonbar">[ 
@@ -234,10 +289,6 @@
 
 
 
-
-                      <!--  <i><a href="#" onclick="toggle_visibility('pol345');">[UGRD,Fall 2021]</a></i></p> 
-<div id="pol345" style="display:none;"><br>This is the undergraduate-level politics method training sequence. The class covers a variety of topics in statistics and causal inference (instructor: Marc Ratkovic).</div>
-&nbsp; </li>-->
                       
                   <p style="margin-bottom:0"> Preceptor, POL 245 Visualizing Data</p> 
                   <div class="buttonbar">[ 
@@ -245,7 +296,7 @@
                      ]</div>
                      <div class="popup" id="course3" style="display:none"> This is the first course in R and basic statistics for incoming freshmen in Princeton. It is one of the classes offered for <a href="https://fsi.princeton.edu/fsi-experience/academic-experience" target="_blank">Freshman Scholars Institute</a> (instructor: Brandon Stewart).
                        </div> 
-                     <br>
+                     <br>   -->
         
                   
 
