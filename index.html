@@ -27,7 +27,7 @@
 <script>
   function button(id) {
     var x = document.getElementById(id);
-    var ids = ["abs1",  "pres1", "abs3", "abs4", "pres4" , "pres3", "abs5", "pres5", "pres6","pres7" , "sum2",  "sum3","paperlink", "sum5", "sum6", "course1", "course2","course3"];
+    var ids = ["abs1",  "pres1", "abs3", "abs4", "pres4" , "pres3", "abs8", "pres8","abs5", "pres5", "pres6","paperlink", "course1", "course2","course3"];
     for(var i = 0; i < ids.length; i++) {
       var item = ids[i];
       if (item != id) {
@@ -183,22 +183,38 @@
 
 
 
+   <!--  & Work in Progress-->
 
 
 
 
+  <h3>Working Papers </h3>
 
-  <h3>Working Papers & Work in Progress</h3>
+  <p style="margin-bottom:0"> How Do Bureaucrats Learn in Absence of Autonomous Sources of Expertise?</p>
+  <span class="buttonbar">[ 
+    <button class="button" onclick="button(&quot;abs8&quot;)">abstract</button>
+    | <a href="" target="_blank">paper</a> 
+    | <button class="button" onclick="button(&quot;pres8&quot;)">presentations</button>
+   <!--  | <a href="" target="_blank">paper</a> -->
+  ] </span>
+  <div class="popup" id="abs8" style="display:none">A large body of literature points to bureaucratic expertise as an important factor in policy outcomes, while the question of how bureaucrats obtain policy-relevant information is relatively understudied. I demonstrate that in a policy environment where policy-specific expertise is concentrated in firms, the bureaucratic acquisition of expertise is contingent upon the political influence of private interests.  Using an original dataset revealing the bureaucratic monitoring behavior of the Greenhouse Gas Reporting Program with a new measure of partisan alignment between firms and bureaucracy, I examine the impact of firms' partisan alignment on bureaucrats' learning. Bureaucrats tend to give more credibility to information from partisan-aligned firms, while also being aware of the information advantage held by these firms. These findings highlight the underlying, but underappreciated, sources of bureaucratic expertise when establishing an autonomous source of information is impossible.</div>
+  <div class="popup" id="paperlink" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div>
+  <div class="popup" id="pres8" style="display:none"> 
+    <li> 2024 American Political Science Association, Philadelphia </li>
+    <li> Princeton Institutions Working Group </li>
+    </div>
+  <br>
+  <br>
 
 
-
-  <p style="margin-bottom:0; display:inline"> Scientification of Politics? Interest Group Influence on Bureaucratic Expertise in Climate Change</p>
+  <p style="margin-bottom:0; display:inline"> Disentangling Expertise from Bias: Interest Group Influence on Bureaucratic Expertise in Climate Change</p>
   <span class="buttonbar">[ 
     <button class="button" onclick="button(&quot;abs5&quot;)">abstract</button>
+    | <a href="" target="_blank">paper</a> 
     | <button class="button" onclick="button(&quot;pres5&quot;)">presentations</button>
    <!--  | <a href="" target="_blank">paper</a> -->
   ] </span>
-  <div class="popup" id="abs5" style="display:none"></div>
+  <div class="popup" id="abs5" style="display:none">To what extent do interest groups influence the processes through which bureaucrats obtain scientific and policy-relevant information? While science has been considered the primary source of expertise that helps regulators improve policy outcomes, the use of scientific information is inevitably intertwined with political reasoning. To explore this dynamic, I construct an original dataset that reveals the Environmental Protection Agency's internal decision-making process and examine how the proximity of each scientific study's funders to the agency affects the study's chances of being cited by bureaucrats in policy documents. My analysis provides evidence that bureaucrats are better informed about the quality of scientific studies but are also biased in their favor. Overall, the effect of expertise appears to outweigh the bias introduced by the proximity between bureaucrats and the interest groups that fund scientific studies. This paper not only provides suggestive evidence on the roles of expertise and bias in the policymaking process but also contributes to our understanding of interest group influence on bureaucratic expertise.</div>
   <div class="popup" id="paperlink" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div>
   <div class="popup" id="pres5" style="display:none"> 
     <li> Princeton Institutions Working Group </li>
@@ -206,6 +222,14 @@
     </div>
   <br>
   <br>
+
+
+
+
+
+
+
+
   <p style="margin-bottom:0; display:inline"> Politics of Academic Experts: Evidence from Antitrust Laws </p>
   <span style="margin-bottom:0; color:#666"><em>(with <a href="https://www.princeton.edu/~nmccarty/" style=" color: inherit;" target="_blank">Nolan McCarty</a>)</em></span>
   <br>
@@ -222,7 +246,7 @@
   <span style="margin-bottom:0; display:inline;color:#666"><em>(with <a href="https://kyuwon-lee.github.io/" style=" color: inherit;" target="_blank">Kyuwon Lee</a>)</em></span>
   <span class="buttonbar">[ 
     <button class="button" onclick="button(&quot;abs4&quot;)">abstract</button>
-   <!-- | <a href="documents/Climate_Info_Environment_2023.pdf" target="_blank">paper</a>  -->
+   <!-- | <a href="" target="_blank">paper</a>  -->
     | <button class="button" onclick="button(&quot;pres4&quot;)">presentations</button> 
   ]</span>
   <div class="popup" id="abs4" style="display:none">While there are public concerns about the declining capacity of regulatory agencies and its impact on regulatory outcomes, such decline could also lead regulated firms to disengage themselves from politics. We investigate whether and how firms reduce their campaign contributions in response to a decrease in state-level regulatory capacity. We do so by leveraging variations in unexpected workforce shocks that arise from the gap between actual and appropriated workforce sizes of U.S. state environmental agencies and estimate their effects. Our analysis reveals that state environmental agencies’ workforce shocks decrease firms’ donations to state legislators, particularly to those in the majority party and the Democratic party. The latter finding is not driven by firms adjusting their donations given to their ideological allies. We also find that state-level restrictions on corporate donations do not moderate firms’ political responsiveness. Overall, this article provides a nuanced picture of how diminishing regulatory capacity could shape corporate political engagement.</div>
@@ -254,55 +278,54 @@
 
 
 
-  <p style="margin-bottom:0"> How Interest Groups Strategically Take Advantage of Voter's Rational Inattention</p> 
+  <!-- <p style="margin-bottom:0"> How Interest Groups Strategically Take Advantage of Voter's Rational Inattention</p> 
   <div class="buttonbar">[ 
-   <!--  <a href="mailto:dahyunc@princeton.edu">email for current draft</a>  -->
      <button class="button" onclick="button(&quot;pres7&quot;)">presentations</button>
   ]</div>
   <div class="popup" id="abs5" style="display:none"></div>
   <div class="popup" id="pres7" style="display:none"> <li> 2022 Midwest Political Science Conference, Chicago</li>
     <li> 2020 Society for Political Methodology, Virtual conference  </li>
     </div> 
-  <br>
+  <br>-->
 
   <p style="margin-bottom:0; display:inline"> A Dataset of Presidential Election Results at the Congressional District Level</p>   
   <span style="margin-bottom:0; color:#666"><em>(with <a href="https://christianbaehr.com/" style=" color: inherit;" target="_blank">Christian Baehr</a>, <a href="https://www.francescatang.com/" style=" color: inherit;" target="_blank">Francesca Tang</a> and <a href="https://titiunik.scholar.princeton.edu/" style=" color: inherit;" target="_blank">Rocio Titiunik</a>)</em></span>    <br><br>  
   
-
-
-    
-              
-              <!--    <h3>Teaching</h3>
+  <br> 
+              <h3>Teaching</h3>
                 
                  
-                    <p style="margin-bottom:0"> Preceptor, POL 574 Quantitative Method IV</p>  
-                    <div class="buttonbar">[ 
+                    <p style="margin-bottom:0; display:inline"> POL 574 Quantitative Method IV</p>  
+          
+                    <div class="buttonbar" style="display:inline-block;"> [ 
                         <button class="button" onclick="button(&quot;course1&quot;)">GRAD, Spring 2022</button>
                      ]</div>
                      <div class="popup" id="course1" style="display:none"> This is the most advanced graduate-level course in the politics method training sequence. The class covers a variety of supervised and unsupervised learning techniques, including both
                       mechanical and probabilistic models, and computational methods for the analysis of new types of data, including text, networks, audio, and images (instructor: John Londregan).
                        </div> 
                      <br>
+                     <br>
 
 
-                  <p style="margin-bottom:0"> Preceptor, POL 345 Quantitative Social Science</p> 
-                  <div class="buttonbar">[ 
+                  <p style="margin-bottom:0; display:inline"> POL 345 Quantitative Social Science</p> 
+                  <div class="buttonbar" style="display:inline-block;">[ 
                     <button class="button" onclick="button(&quot;course2&quot;)">UGRD, Fall 2021</button>
                      ]</div>
                      <div class="popup" id="course2" style="display:none"> This is the undergraduate-level politics method training sequence. The class covers a variety of topics in statistics and causal inference (instructor: Marc Ratkovic).
                        </div> 
                      <br>
+                     <br>
 
 
 
                       
-                  <p style="margin-bottom:0"> Preceptor, POL 245 Visualizing Data</p> 
-                  <div class="buttonbar">[ 
+                  <p style="margin-bottom:0; display:inline"> POL 245 Visualizing Data</p> 
+                  <div class="buttonbar" style="display:inline-block;">[ 
                     <button class="button" onclick="button(&quot;course3&quot;)">UGRD, Summer 2021</button>
                      ]</div>
                      <div class="popup" id="course3" style="display:none"> This is the first course in R and basic statistics for incoming freshmen in Princeton. It is one of the classes offered for <a href="https://fsi.princeton.edu/fsi-experience/academic-experience" target="_blank">Freshman Scholars Institute</a> (instructor: Brandon Stewart).
                        </div> 
-                     <br>   -->
+                     <br>  
         
                   
 
