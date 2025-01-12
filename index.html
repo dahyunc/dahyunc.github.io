@@ -27,7 +27,7 @@
 <script>
   function button(id) {
     var x = document.getElementById(id);
-    var ids = ["science1", "abs1",  "pres1","abs2", "paperlink2", "pres2","abs3", "abs4", "pres4" , "pres3", "abs8", "pres8","abs5", "pres5", "pres6","paperlink", "course1", "course2","course3"];
+    var ids = ["science1","scinece2" ,"abs1",  "pres1","abs2", "paperlink2", "pres2","abs3", "abs4", "pres4" , "pres3", "abs8", "pres8","abs5", "pres5", "pres6","paperlink", "course1", "course2","course3"];
     for(var i = 0; i < ids.length; i++) {
       var item = ids[i];
       if (item != id) {
@@ -111,16 +111,17 @@
       <!--| <button class="button" onclick="button(&quot;pres1&quot;)">presentations</button>-->
 
   
-      <p style="margin-bottom:0; display:inline"> How Politics Percolates Through Science</p>
+      <p style="margin-bottom:0; display:inline"> How Politics Percolates Through Science Assessment</p>
       <span class="buttonbar">[ 
         <button class="button" onclick="button(&quot;science1&quot;)">abstract</button>
-        | <a href="" target="_blank">paper</a> 
+        | <a class="button" onclick="button(&quot;scinece2&quot;)">paper</a> 
       <!--   | <button class="button" onclick="button(&quot;pres1&quot;)">presentations</button> -->
     ]</span>
     <div class="popup" id="science1" style="display:none">
       Scientific research has been considered a primary source of information for improving policy outcomes, but its use is inevitably intertwined with political considerations. Using a comprehensive dataset of peer-reviewed journal articles evaluated for the National Ambient Air Quality Standards, this paper examines the trade-off between partisan bias and evidence quality in the use of science for environmental regulations. I find that the integration of science into policymaking is guided by a pursuit of expertise but is biased in favor of the presidential administration. The evaluation of low-quality studies is more susceptible to partisan bias, while high-quality studies remain relatively unaffected. This work not only provides an empirical examination of long-standing questions about how information is used by politically divergent factions but also illuminates the pathways through which academic research connects to the contours of evidence-based policymaking.
       <br>
     </div>
+    <div class="popup" id="scinece2" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div>
 
 
 
