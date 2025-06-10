@@ -62,7 +62,7 @@ div.popup{
   background-color:#ffffff;
   padding:0px;
   font:14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#10723e;
+  color:#990000;
   font-weight:400;
   cursor:pointer;
   border:none;
@@ -87,7 +87,7 @@ body{
 }
 small{font-size:15px}
 p{color:#222; margin:0 0 20px}
-a{color:#10723e ; text-decoration:none}
+a{color:#990000 ; text-decoration:none}
 /* #267CB9 #188aff #0a7fda #10723e */ 
 
 
