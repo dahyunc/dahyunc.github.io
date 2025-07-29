@@ -27,7 +27,7 @@
 <script>
   function button(id) {
     var x = document.getElementById(id);
-    var ids = ["science1", "abs1",  "pres1","abs2", "paperlink2", "pres2","abs3", "abs4", "pres4" , "pres3", "abs8", "pres8","abs5", "pres5", "pres6","paperlink", "course1", "course2","course3"];
+    var ids = ["science1", "abs1",  "pres1","abs2", "paperlink2", "pres2","abs3", "abs4", "pres4" , "pres3", "package1","paperlink", "course1", "course2","course3"];
     for(var i = 0; i < ids.length; i++) {
       var item = ids[i];
       if (item != id) {
@@ -152,7 +152,7 @@
     <br>
 
 
-  <p style="margin-bottom:0; display:inline"> How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity in Political Science</p>
+  <p style="margin-bottom:0; display:inline"> How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity</p>
   <p style="margin-bottom:0; display:inline;color:#666">(with <a href="https://pjesscarter.github.io/" style="color: inherit;" target="_blank">Perry Carter</a>)</p>
   <span class="buttonbar">[ 
     <button class="button" onclick="button(&quot;abs3&quot;)">abstract</button>
@@ -227,8 +227,8 @@
   <h3>Publications </h3>
 
 
-    <p style="margin-bottom:0;">Teaming Up Across Political Divides: Evidence from Climate Regulations.</p>
-    <span style="margin-bottom:0; color:#666; display:inline;">Accepted,</span> 
+  <p style="margin-bottom:0; display:inline;">Why Interest Groups With Divergent Goals Collaborate: Evidence From Climate Regulation.</p>
+    <span style="margin-bottom:0; color:#666; display:inline;"> Accepted, </span>
     <em><span style="margin-bottom:0; text-decoration: inherit; color:#990000"> Economics and Politics</span></em>
     <span class="buttonbar">[ 
         <button class="button" onclick="button(&quot;abs1&quot;)">abstract</button>
@@ -252,10 +252,36 @@
 
     <br>
     <br>
+  <br>
 
+    <h3>Software </h3>
+    <div style="display:inline-block; margin-bottom:0;">
+      <strong><a href="https://cran.r-project.org/web/packages/scR/index.html">scR</a></strong>
+      (available on CRAN, with Perry Carter)
+      [
+      <button class="button" onclick="button('package1')">description</button>
+      <!-- | <a class="button" onclick="button('paperlink2')">paper</a> -->
+      <!-- | <button class="button" onclick="button('pres2')">presentations</button> -->
+      ]
+    </div>
+    
+    <div class="popup" id="package1" style="display:none;">
+      scR is an R package developed by Carter & Choi (2025) designed to help researchers determine how much data is needed for reliable generalization. It provides a design-aware empirical framework that estimates sample complexity using smooth extrapolation of model performance from pilot data. Additionally, scR offers theoretical guidance by calculating Vapnik-Chervonenkis Dimension (VCD). This statistically rigorous and interpretable diagnostic is particularly helpful for empirical researchers designing data-intensive studies under resource constraints or uncertainty. For more details, see Carter & Choi (2025), "How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity" (doi:10.31219/osf.io/evrcj_v2). The package is openly accessible on CRAN.
+    </div>
+    <div class="popup" id="paperlink2" style="display:none;">
+      <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft
+    </div>
+    <div class="popup" id="pres2" style="display:none;">
+      <ul style="margin-top: 0;">
+        <li>2023 American Political Science Association, Los Angeles</li>
+        <li>2022 Society for Political Methodology, Washington University in St. Louis</li>
+        <!-- <li>2023 International Studies Association, Montréal</li> -->
+      </ul>
+    </div>
 
+    
 
-
+   
   <!--  <p style="margin-bottom:0"> How Do Bureaucrats Learn in Absence of Autonomous Sources of Expertise?</p>
 
   ] </span> 
