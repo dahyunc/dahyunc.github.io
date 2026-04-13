@@ -1,464 +1,570 @@
-<!doctype html>
-<html>
-  <head>
-
-
-
-
-<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-<!--<link rel="manifest" href="img/site.webmanifest"> -->
-<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#e77500">
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
-
-      
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XL31ZTBXJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5XL31ZTBXJ');
-</script>
-	  
-
-<script>
-  function button(id) {
-    var x = document.getElementById(id);
-    var ids = ["science1", "abs1",  "pres1","abs2", "paperlink2", "pres2","abs3", "pres3", "package1", "course1", "course2","course3"];
-    for(var i = 0; i < ids.length; i++) {
-      var item = ids[i];
-      if (item != id) {
-        document.getElementById(item).style.display = "none";
-      } else {
-        if (x.style.display === "none") {
-          x.style.display = "block"
-        } else {
-          x.style.display = "none";
-        }
-      }
-    }	
-  }
-  </script> 
-
-
-
-<script type="text/javascript">
-    function toggle_visibility(id) {
-       event.preventDefault();
-       var e = document.getElementById(id);
-       if(e.style.display == 'none')
-          e.style.display = 'block';
-       else
-          e.style.display = 'none';ss
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dahyun Choi</title>
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" href="img/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XL31ZTBXJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5XL31ZTBXJ');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-text: #2c2c2c;
+      --color-text-light: #6a6a6a;
+      --color-heading: #1a1a1a;
+      --color-accent: #8b4513;
+      --color-link: #4E2A84;
+      --color-border: #ddd;
+      --color-abstract-bg: #f7f7f7;
+      --font-body: 'Source Sans 3', 'Helvetica Neue', Helvetica, sans-serif;
+      --max-width: 920px;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { overflow-y: scroll; }
+    body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
     }
 
+    /* ── Sticky Header + Nav wrapper ── */
+    .sticky-wrap {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      text-align: center;
+      padding: 0.8rem 2rem 0.3rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .site-header h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-heading);
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.15rem;
+    }
+    .site-header .header-details {
+      font-size: 0.82rem;
+      color: var(--color-text-light);
+      line-height: 1.5;
+    }
+
+    /* ── Nav Tabs ── */
+    .nav-tabs {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      padding: 0 2rem;
+    }
+    .nav-tabs a {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text-light);
+      text-decoration: none;
+      padding: 0.85rem 1.6rem;
+      position: relative;
+      transition: color 0.2s;
+      letter-spacing: 0.03em;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-tabs a:hover { color: var(--color-link); }
+    .nav-tabs a.active { color: var(--color-link); }
+    .nav-tabs a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-link);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 2rem 3rem;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .hero-photo {
+      margin: 0;
+      position: sticky;
+      top: 5rem;
+    }
+    .hero-photo img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .hero-bio {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--color-text);
+    }
+    .hero-links {
+      margin-top: 1.5rem;
+      font-size: 1.02rem;
+    }
+    .hero-links a {
+      color: var(--color-link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero-links a:hover { text-decoration: underline; }
+    .hero-links .sep { margin: 0 0.45rem; color: #bbb; }
+
+    /* ── News & Selected Research on Home ── */
+    .home-extra {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.5rem 2rem 1.5rem;
+    }
+    .home-extra h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    .home-extra h3:first-child { margin-top: 0; }
+    .home-extra-item {
+      margin-bottom: 0.6rem;
+      padding-left: 0;
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      line-height: 1.5;
+    }
+    .home-extra-item .he-date {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-text-light);
+      flex-shrink: 0;
+      min-width: 90px;
+    }
+    .home-extra-item .he-date::before { content: '['; }
+    .home-extra-item .he-date::after { content: ']'; }
+    .home-extra-item .he-title {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+
+    /* ── Section ── */
+    .section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 2rem 1.5rem;
+    }
+    .sub-section-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+      margin-top: 4rem;
+    }
+    .sub-section-title:first-of-type { margin-top: 0; }
+
+    /* ── Publication Item (details/summary) ── */
+    .pub-item { margin-bottom: 2.2rem; }
+    .pub-item details { margin-bottom: 0.2rem; }
+    .pub-item summary {
+      font-family: var(--font-body);
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--color-heading);
+      line-height: 1.4;
+      cursor: pointer;
+      transition: color 0.2s;
+      list-style: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .pub-item summary::-webkit-details-marker { display: none; }
+    .pub-item summary::marker { display: none; content: ''; }
+    .pub-item summary::before {
+      content: '▸';
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+      flex-shrink: 0;
+      display: inline-block;
+    }
+    .pub-item details[open] summary::before {
+      content: '▾';
+      color: var(--color-link);
+    }
+    .pub-item summary:hover { color: var(--color-link); }
+    .pub-item details[open] summary { color: var(--color-link); }
+
+    .pub-venue { font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem; font-style: italic; padding-left: 1.1rem; }
+    .pub-venue .journal { color: var(--color-link); font-weight: 700; }
+    .pub-coauthors { font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.4rem; padding-left: 1.1rem; }
+
+    .pub-abstract {
+      margin-top: 0.7rem;
+      margin-left: 1.1rem;
+      padding: 1rem 1.5rem;
+      background: #f8f6fc;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--color-text-light);
+      animation: fadeIn 0.25s ease;
+    }
+    .pub-abstract::before {
+      content: 'ABSTRACT';
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-link);
+      margin-bottom: 0.5rem;
+    }
+    .pub-paper-link { margin-top: 0.6rem; margin-bottom: 0.3rem; margin-left: 1.1rem; }
+    .pub-paper-link a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: all 0.2s;
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-link);
+      display: inline-block;
+    }
+    .pub-paper-link a:hover {
+      background: var(--color-link);
+      color: #fff;
+      border-color: var(--color-link);
+    }
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(-4px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    .pub-title-plain {
+      font-family: var(--font-body);
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--color-heading);
+      line-height: 1.4;
+      margin-bottom: 0.2rem;
+      padding-left: 1.1rem;
+    }
+
+    /* ── Software ── */
+    .software-item { margin-bottom: 2.2rem; }
+
+    /* ── Section Divider ── */
+    .section-divider {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .section-divider hr {
+      border: none;
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.3rem 2rem;
+        justify-items: center;
+        text-align: center;
+      }
+      .hero-photo { position: static; }
+      .hero-bio { text-align: left; }
+      .hero-links { text-align: center; line-height: 2.2; }
+      .section { padding: 1.5rem 1.3rem 0.5rem; }
+      .site-header h1 { font-size: 2.1rem; margin-bottom: 0.4rem; }
+      .site-header { padding: 2.5rem 1.5rem 1rem; }
+      .site-header .header-details { font-size: 0.92rem; }
+      .pub-abstract { padding: 0.8rem 1rem; font-size: 0.88rem; }
+      .nav-tabs { position: static; }
+      .sticky-wrap { position: static; border-bottom: none; }
+    }
+    @media (max-width: 480px) {
+      .site-header { padding: 2rem 1rem 1.5rem; }
+      .site-header h1 { font-size: 1.8rem; }
+      .site-header .header-details { font-size: 0.85rem; }
+      .sub-section-title { font-size: 1.15rem; }
+      .pub-item summary { font-size: 1rem; }
+      .pub-title-plain { font-size: 1rem; }
+      .hero-photo img { width: 160px; height: 160px; }
+      .hero-links a { font-size: 0.85rem; }
+      .hero-links .sep { margin: 0 0.25rem; }
+      .pub-paper-link a { font-size: 0.8rem; padding: 0.25rem 0.6rem; }
+      .nav-tabs a { padding: 0.6rem 0.7rem; font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sticky-wrap" id="stickyWrap">
+<header class="site-header">
+  <h1>Dahyun Choi</h1>
+  <div class="header-details">
+    Ph.D. Candidate · Princeton University · <span id="header-email"></span>
+  </div>
+</header>
+
+<nav class="nav-tabs">
+  <a href="#home" class="active">Home</a>
+  <a href="#research">Research</a>
+  <a href="#software">Software</a>
+  <a href="documents/Choi_CV.pdf" target="_blank">CV</a>
+</nav>
+</div>
+
+<!-- ══════════════════════════ HOME + BIO ══════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-photo">
+    <img src="img/IMG_2026_2.png" alt="Dahyun Choi">
+  </div>
+  <div>
+    <p class="hero-bio">
+      I work on core questions across politics, markets, and governance of how government institutions and organized interests produce and evaluate information, and strategically shape the scientific and technical foundations of public policy. Leveraging machine learning, causal inference, and formal theory, I study the settings where regulatory agencies evaluate expertise, interest groups compete over policy implementation and knowledge production, and legislatures direct public investment in innovation. <!--My scholarship is conditionally accepted at the <em>American Journal of Political Science</em> and published or forthcoming in <em>Economics &amp; Politics</em> and <em>Political Science Research and Methods</em>. -->
+      <br><br>
+      I also develop machine learning methods for measuring political and organizational behavior. 
+    <!--   I received my Ph.D. in Politics from Princeton University in 2026, with a Graduate Certificate in <a href="https://csml.princeton.edu/graduate/certificate-program" target="_blank" style="color: var(--color-link); text-decoration: none;">Statistics and Machine Learning</a>. -->
+    </p>
+  </div>
+</section>
+
+<div class="home-extra">
+  <h3>Recent News</h3>
+  <div class="home-extra-item">
+    <span class="he-date">May 2026</span>
+    <span class="he-title">Scheduled to give a talk at Northwestern Kellogg (Political Economy Rookiefest)</span>
+</div>
+<div class="home-extra-item">
+    <span class="he-date">May 2026</span>
+    <span class="he-title">Scheduled to give a talk at Cornell (Congress & History Conference)</span>
+</div>
+ <!--  <div class="home-extra-item">
+    <span class="he-date">2026</span>
+    <span class="he-title">Presenting at Cornell (Congress &amp; History)</span>
+  </div> -->
+</div>
+
+<div class="section-divider"><hr></div>
+
+<!-- ══════════════════════════ RESEARCH ══════════════════════════ -->
+<section class="section" id="research">
+
+  <h3 class="sub-section-title">Peer-Reviewed Publications</h3>
+
+  <div class="pub-item">
+    <details>
+      <summary>Fine-tuned Large Language Models Can Replicate Expert Coding Better than Trained Coders: A Study on Informative Signals Sent by Interest Groups</summary>
+      <div class="pub-abstract">
+        Understanding the political process in the United States requires examining how information is provided to politicians and the general public. While existing studies point to interest groups as strategic information providers, studying this aspect empirically has been challenging due to the need for expert-level annotation in measurement. We make two contributions. First, we demonstrate that fine-tuned large language models (LLMs) can replicate expert-level annotation in a specialized area above the accuracy of lightly-trained workers, crowd-workers, and zero-shot LLMs. Second, we quantify two types of interest group signals that are difficult to separate empirically using other means: 1) informative signals that help agents improve political decisions, and 2) associative signals that influence preference formation but lack direct relevance to the substantive topic of interest. We demonstrate the utility of this approach using two applications where our classifier generalizes out of distribution. This study shows methodologically the applicability of large language models for complex expert-driven measurement tasks but also shows substantively that interest groups strategically tailor the composition of signals under different institutional settings.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/finetuned-large-language-models-can-replicate-expert-coding-better-than-trained-coders-a-study-on-informative-signals-sent-by-interest-groups/55DDE48ECD26AB91D7888E36BDBC165A" target="_blank">Paper</a>
+      </div>
+    </details>
+    <p class="pub-coauthors">with Brandon Stewart and Denis Peskoff</p>
+    <p class="pub-venue">Forthcoming in <span class="journal">Political Science Research and Methods</span></p>
+  </div>
+
+  <div class="pub-item">
+    <details>
+      <summary>Why Interest Groups With Divergent Goals Collaborate: Evidence From Climate Regulation</summary>
+      <div class="pub-abstract">
+        Why do interest groups with contrasting interests and policy goals work together? I present a theory of collaborative policy production and show that interest groups can achieve higher policy gains through collaboration, even though their ideal policy goals may diverge significantly. To test theoretical results, I introduce original measurement strategies that reveal systematic patterns in which firms and environmental groups invest in joint efforts to improve fine-grained details of policy to achieve greenhouse gas emissions targets. The analysis, using public comments spanning 2010-2020, demonstrates that comments written jointly by environmental groups and firms contain more information that can contribute to the quality of policy implementation than individual efforts alone, despite compromises on policy preferences. These findings highlight the hidden dynamics of regulatory politics, wherein divergent political goals are reconciled for high-quality policy implementation.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://onlinelibrary.wiley.com/doi/10.1111/ecpo.70009" target="_blank">Paper</a>
+      </div>
+    </details>
+    <p class="pub-venue">2026. <span class="journal">Economics &amp; Politics</span>, 38: 46–61.</p>
+  </div>
+
+  <h3 class="sub-section-title">Working Papers</h3>
+
+  <div class="pub-item">
+    <details>
+      <summary>Partisan Bias and the Resilience of High-Impact Science</summary>
+      <div class="pub-abstract">
+        How do partisan bias and scholarly impact within academic communities jointly shape the use of evidence in regulatory policymaking? I investigate this question using a novel dataset of 16,783 peer-reviewed studies evaluated by the Environmental Protection Agency for the Integrated Science Assessments (ISA), which inform the National Ambient Air Quality Standards. I find that Democratic administrations are 15.4% more likely to cite pro-regulatory studies, while Republican administrations are 17.5% less likely to do so. These effects correspond to a two-standard-deviation change in study impact measures. Yet partisan bias is moderated by evidentiary impact: high-impact studies are cited consistently across administrations, while lower-impact studies are less penalized when aligned with an administration's policy agenda. Evidence on participant selection in the ISA process suggests a plausible mechanism underlying this pattern. Together, the findings suggest that while science retains epistemic authority, its application is shaped by political context within the administrative state.
+
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://drive.google.com/file/d/1db8K4rv-2FTK-YoubJHTBjBAfb0VE7uv/view?usp=sharing" target="_blank">Paper</a>
+      </div>
+    </details>
+    <p class="pub-venue">Revise &amp; Resubmit at <span class="journal">American Journal of Political Science</span></p>
+  </div>
+
+  <div class="pub-item">
+    <details>
+      <summary>How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity</summary>
+      <div class="pub-abstract">
+        How much data is needed to ensure that a model performs reliably on new, unseen data? Despite its central importance to empirical research design, sample size decisions are often made heuristically—guided more by resource constraints than by principled diagnostics. Existing tools like power analysis and cross-validation offer limited insight into how predictive performance scales with sample size. We introduce a design-aware, empirical framework for estimating sample complexity bounds tailored to applied settings. By fitting smooth extrapolation functions to model performance from resampled pilot data, our method estimates the sample size needed to achieve researcher-specified generalization guarantees. Through applications to supervised learning tasks involving extensive human-annotated data, we show that generalization often stabilizes with as little as 10% of typical labeling costs. This approach provides a statistically grounded, interpretable diagnostic for generalization performance and a practical tool for political scientists designing data-intensive studies under resource constraints or design uncertainty.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://osf.io/preprints/osf/evrcj_v2" target="_blank">Paper</a>
+      </div>
+    </details>
+    <p class="pub-coauthors">with Perry Carter</p>
+    <p class="pub-venue">Revise &amp; Resubmit at <span class="journal">American Journal of Political Science</span></p>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title-plain">When Algorithms Govern</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title-plain">Innovation by Design: How Legislative Institutions Shape the Direction of Federal R&amp;D</div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title-plain">Politics of Academic Experts: Evidence from Antitrust Regulations</div>
+    <p class="pub-coauthors">with Nolan McCarty</p>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title-plain">Interest Group Ecologies and Ideological Niches</div>
+    <p class="pub-coauthors">with Charles Cameron</p>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-title-plain">Sample Complexity for Open-Ended Responses</div>
+    <p class="pub-coauthors">with Perry Carter and Narrelle Gilchrist</p>
+  </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<!-- ══════════════════════════ SOFTWARE ══════════════════════════ -->
+<section class="section" id="software">
+
+  <h3 class="sub-section-title">Software</h3>
+
+  <div class="pub-item">
+    <details>
+      <summary>scR</summary>
+      <div class="pub-abstract">
+        scR is an R package developed by Carter & Choi (2025) designed to help researchers determine how much data is needed for reliable generalization. It provides a design-aware empirical framework that estimates sample complexity using smooth extrapolation of model performance from pilot data. Additionally, scR offers theoretical guidance by calculating Vapnik-Chervonenkis Dimension (VCD). This interpretable diagnostic is particularly helpful for empirical researchers designing data-intensive studies under resource constraints or uncertainty. For more details, see Carter & Choi (2025), "How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity" (doi:10.31219/osf.io/evrcj_v2).
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://cran.r-project.org/web/packages/scR/index.html" target="_blank">CRAN</a>
+      </div>
+    </details>
+    <p class="pub-venue">Available on CRAN · with Perry Carter</p>
+  </div>
+
+</section>
+
+<script>
+  // Accordion: close other details when one opens
+  document.querySelectorAll('.pub-item details').forEach(function(det) {
+    det.addEventListener('toggle', function() {
+      if (this.open) {
+        document.querySelectorAll('.pub-item details[open]').forEach(function(other) {
+          if (other !== det) other.removeAttribute('open');
+        });
+      }
+    });
+  });
+
+  // Active tab on scroll
+  var navLinks = document.querySelectorAll('.nav-tabs a');
+  var sections = [];
+  navLinks.forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      var id = href.slice(1);
+      var el = document.getElementById(id);
+      if (el) sections.push({ el: el, link: link });
+
+      // Custom scroll on click
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (id === 'home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          // Scroll to section with offset for compact header (~80px)
+          var targetY = el.getBoundingClientRect().top + window.scrollY - 90;
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        }
+      });
+    }
+  });
+
+  window.addEventListener('scroll', function() {
+    var scrollPos = window.scrollY + 150;
+    var current = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].el.offsetTop <= scrollPos) {
+        current = sections[i];
+      }
+    }
+    navLinks.forEach(function(l) {
+      if (l.getAttribute('href') && l.getAttribute('href').startsWith('#')) {
+        l.classList.remove('active');
+      }
+    });
+    if (current) current.link.classList.add('active');
+  });
+
+  // Email
+  var u = 'dahyunc'; var d = 'princeton.edu';
+  var headerEmail = document.getElementById('header-email');
+  if (headerEmail) {
+    var a = document.createElement('a');
+    a.href = 'mai' + 'lto:' + u + '@' + d;
+    a.textContent = u + '@' + d;
+    a.style.color = 'var(--color-link)';
+    a.style.textDecoration = 'none';
+    headerEmail.appendChild(a);
+  }
 </script>
 
-
-  
-  
-  </head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="stylesheets/styles2.css">
-  
-  <title>Dahyun Choi</title>
-
-  <body oncontextmenu="return false">
-    <div class="wrapper">
-      <header>
-        <img src="img/IMG_2026_2.png" width="250" class="profile-pic"/>
-        
-       <!--  <img src="img/profile_version2.png" width="250"/> --> 
-        <p></p>
-        <h1>Dahyun Choi</h1>
-          <!--<p>Ph.D. Candidate</p>-->
-          <p></p>
-         <p class="view"><strong>Ph.D. Candidate</strong>
-          <br><strong><a href="https://politics.princeton.edu/people/dahyun-choi">Department of Politics</a></strong>
-          <br> <strong>Princeton University</strong>
-          <br><strong><a href="mailto:dahyunc@princeton.edu">dahyunc@princeton.edu</a></strong></p>
-        <p></p>
-
-        </ul>
-      </header>
-
-
-      <style>
-        .profile-pic {
-          border-radius: 50%;
-          object-fit: cover;
-        }
-      </style>
-      
-      <section>
-        <p>I study how political and economic institutions shape the production and use of expertise and emerging technologies. My research examines interest group politics, political economy, AI governance, and American political institutions, with a focus on how organizations strategically produce, use, and frame policy-relevant information and adapt to political and technological uncertainty. I also develop computational and machine learning methods to study political and organizational behavior.
-
-
-  
-       <br>
-       <br>
-
-     
-
-     <h3>Working Papers</h3>
-
-     <p style="margin-bottom:0"> Partisan Bias and the Resilience of High-Impact Science </p>
-     <span style="margin-bottom:0; color:#666">Revise & Resubmit at </span>
-     <strong><em><span style="margin-bottom:0; text-decoration: inherit; color:#990000"> American Journal of Political Science</em></span></strong>
-      <span class="buttonbar">[ 
-        <button class="button" onclick="button(&quot;science1&quot;)">abstract</button>
-       | <a href="https://drive.google.com/file/d/1db8K4rv-2FTK-YoubJHTBjBAfb0VE7uv/view?usp=sharing" target="_blank">paper</a> 
-      <!--    | <a href="https://ideas.repec.org/p/osf/osfxxx/ujyec.html" target="_blank">paper</a> -->
-      <!--   | <button class="button" onclick="button(&quot;pres1&quot;)">presentations</button> -->
-    ]</span>
-    
-    <div class="popup" id="science1" style="display:none">
-      How do partisan bias and scholarly impact within academic communities jointly shape the use of evidence in regulatory policymaking? I investigate this question using a novel dataset of 16,783 peer-reviewed studies evaluated by the Environmental Protection Agency for the Integrated Science Assessments (ISA), which inform the National Ambient Air Quality Standards. I find that Democratic administrations are 15.4% more likely to cite pro-regulatory studies, while Republican administrations are 17.5% less likely to do so. These effects correspond to a two-standard-deviation change in study impact measures. Yet partisan bias is moderated by evidentiary impact: high-impact studies are cited consistently across administrations, while lower-impact studies are less penalized when aligned with an administration’s policy agenda. Evidence on participant selection in the ISA process suggests a plausible mechanism underlying this pattern. Together, the findings suggest that while science retains epistemic authority, its application is shaped by political context within the administrative state.
-
-      <br>
-    </div>
-
-
- <!--       <p style="margin-bottom:0; display:inline;">Why Interest Groups With Divergent Goals Collaborate: Evidence From Climate Regulation.</p>
-       <span style="margin-bottom:0; color:#666; display:inline;"> Forthcoming in </span>
-       <strong> <em><span style="margin-bottom:0; text-decoration: inherit; color:#990000"> Economics and Politics</span></em></strong>
-       <span class="buttonbar">[ 
-           <button class="button" onclick="button(&quot;abs1&quot;)">abstract</button>
-           | <a href="documents/ClimateInfo_November23.pdf" target="_blank">paper</a> 
-        ß  | <button class="button" onclick="button(&quot;pres1&quot;)">presentations</button> 
-       ]</span>
-       <div class="popup" id="abs1" style="display:none">
-           Why do interest groups with contrasting interests and policy goals work together? I present a theory of collaborative policy production and show that interest groups can achieve higher policy gains through collaboration, even though their ideal policy goals may diverge significantly. To test theoretical results, I introduce original measurement strategies that reveal systematic patterns in which firms and environmental groups invest in joint efforts to improve fine-grained details of policy to achieve greenhouse gas emissions targets. The analysis, using public comments spanning 2010-2020, demonstrates that comments written jointly by environmental groups and firms contain more information that can contribute to the quality of policy implementation than individual efforts alone, despite compromises on policy preferences. These findings highlight the hidden dynamics of regulatory politics, wherein divergent political goals are reconciled for high-quality policy implementation.
-           <br>
-       </div> 
-       <div class="popup" id="pres1" style="display:none"> 
-           <li> Political Economy of Climate and the Environment, University of Pennsylvania </li>
-           <li> Frontiers in Money in Politics Research, University of Southern California </li>
-           <li> 2023 American Political Science Association, Los Angeles </li>
-           <li> 2023 Money in Politics Conference, Copenhagen Business School </li>
-           <li> Climate Pipeline Project, Brown University </li>
-           <li> 2023 Midwest Political Science Association, Chicago </li>
-           <li> 2022 Environmental Politics and Governance, Virtual conference </li>
-           <li> 2022 International Political Economy Society, University of Pittsburgh </li>
-       </div> -->
-       
- <!--          <p style="margin-bottom:0; display:inline">Fine-tuned Large Language Models Can Replicate Expert Coding Better than Trained Coders: A Study on Informative Signals Sent by Interest Groups </p>
-       <span style="margin-bottom:0;color:#666; font-size:smaller">(with <a href="https://bstewart.scholar.princeton.edu/" style="color: inherit;" target="_blank">Brandon Stewart</a> and <a href="https://denis.ai/" style="color: inherit;" target="_blank">Denis Peskoff</a>).</span>
-       <span style="margin-bottom:0; color:#666">Conditionally Accepted at  </span>
-       <strong><em><span style="margin-bottom:0; text-decoration: inherit; color:#990000"> Political Science Research and Methods</em></span></strong>
-       
-       <span class="buttonbar">[ 
-           <button class="button" onclick="button(&quot;abs2&quot;)">abstract</button> -->
-           <!--   | <a class="button" onclick="button(&quot;paperlink2&quot;)">paper</a> -->
-            <!--     | <button class="button" onclick="button(&quot;pres2&quot;)">presentations</button> -->
-   <!--        ]</span>
-       
-       <div class="popup" id="abs2" style="display:none">
-         Understanding the political process in the United States requires examining how information is provided to politicians and the general public. While existing studies point to interest groups as strategic information providers, studying this aspect empirically has been challenging due to the need for expert-level annotation in measurement. We make two contributions.  First, we demonstrate that fine-tuned large language models (LLMs) can replicate expert-level annotation in a specialized area above the accuracy of lightly-trained workers, crowd-workers, and zero-shot LLMs. Second, we quantify two types of interest group signals that are difficult to separate empirically using other means: 1) informative signals that help agents improve political decisions, and 2) associative signals that influence preference formation but lack direct relevance to the substantive topic of interest. We demonstrate the utility of this approach using two applications where our classifier generalizes out of distribution. This study shows methodologically the applicability of large language models for complex expert-driven measurement tasks but also shows substantively that interest groups strategically tailor the composition of signals under different institutional settings.
-       </div>
-       <div class="popup" id="paperlink2" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div>
-       <div class="popup" id="pres2" style="display:none"> 
-           <li> 2023 American Political Science Association, Los Angeles</li>
-           <li> 2022 Society for Political Methodology, Washington University in St. Louis </li>
-             <li> 2023 International Studies Association, Montréal </li>
-       </div> -->
-
-
-
-       <br>
-       <br>
-
-
-       <p style="margin-bottom:0">How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity (with <a href="https://pjesscarter.github.io/" style="color: inherit;" target="_blank">Perry Carter</a>)</p>
-     <span style="margin-bottom:0; color:#666">Revise & Resubmit at </span>
-     <strong><em><span style="margin-bottom:0; text-decoration: inherit; color:#990000"> American Journal of Political Science</em></span></strong>
-       <span class="buttonbar">[ 
-         <button class="button" onclick="button(&quot;abs3&quot;)">abstract</button>
-        | <a href="https://osf.io/preprints/osf/evrcj_v2" target="_blank">paper</a> 
-         <!--     | <button class="button" onclick="button(&quot;pres3&quot;)">presentations</button>  How Much Data Is Enough?  -->
-       ]</span>
-       <div class="popup" id="abs3" style="display:none">How much data is needed to ensure that a model performs reliably on new, unseen data? Despite
-         its central importance to empirical research design, sample size decisions are often made
-         heuristically—guided more by resource constraints than by principled diagnostics. Existing tools
-         like power analysis and cross-validation offer limited insight into how predictive performance
-         scales with sample size. We introduce a design-aware, empirical framework for estimating
-         sample complexity bounds tailored to applied settings. By fitting smooth extrapolation functions
-         to model performance from resampled pilot data, our method estimates the sample size needed
-         to achieve researcher-specified generalization guarantees. Through applications to supervised
-         learning tasks involving extensive human-annotated data, we show that generalization often
-         stabilizes with as little as 10% of typical labeling costs. This approach provides a statistically
-         grounded, interpretable diagnostic for generalization performance and a practical tool for political
-         scientists designing data-intensive studies under resource constraints or design uncertainty. </div>
-         <div class="popup" id="pres3" style="display:none"> <li> 2023 American Political Science Association, Los Angeles</li>
-         <li> 2023 Society for Political Methodology, Stanford University  </li>
-       </div> 
-      
-      
-    
-         <br>
-         <br>
-  
-         <p style="margin-bottom:0; display:inline">  When Algorithms Govern  </p>
-
-         <br>
-         <br>
-          <p style="margin-bottom:0; display:inline"> Innovation by Design: How Legislative Institutions Shape the Direction of Federal R&D </p>
-         <!--    <br>
-          <br>
-          <p style="margin-bottom:0; display:inline"> Public–Private Dynamics in Environmental Data</p>  -->
-
-
-      <br>
-      <br>
-
-    <p style="margin-bottom:0; display:inline"> Politics of Academic Experts: Evidence from Antitrust Regulations </p>
-    <span style="margin-bottom:0; color:#666; font-size:smaller">(with Nolan McCarty)</span>
-    <br>
-    <br>
-  <!--   <p style="margin-bottom:0; display:inline"> Legislative Foundations of the Administrative State </p>
-    <span style="margin-bottom:0; color:#666; font-size:smaller">(with Amy Jeon, Charles Cameron, and Charlie McWeeny)</span>
-    <br>
-    <br>-->
-    <p style="margin-bottom:0; display:inline"> Interest Group Ecologies and Ideological Niches </p><span style="margin-bottom:0; color:#666; font-size:smaller">(with Charles Cameron)</span>
-       
-  
-
-     <!--  <p style="margin-bottom:0; display:inline">Parallel Forces, Parallel Patterns 1868–2024: An Integrated Approach to Seat and Vote Shares in the House and Senate </p>
-         <span style="margin-bottom:0; color:#666; font-size:smaller">(with Charles Cameron  and <a href="https://sites.google.com/view/hjpaarsch/" style=" color: inherit;" target="_blank">Harry Paarsch</a>)</span> -->
-        <!--   <span class="buttonbar">[ 
-          <button class="button" onclick="button(&quot;abs4&quot;)">abstract</button>
-          ]</span>
-          <div class="popup" id="abs4" style="display:none">The Constitution creates a distinctive electoral rhythm in federal elections through the staggered timing of House, Senate, and presidential contests. This rhythm generates recurring presidential party losses in midterm elections and possibly other patterns, such as gains in presidential years and apparent dependence across electoral cycles. Although midterm losses in the House are well documented, these dynamics are often studied in isolation, over short periods, or overlooked in the Senate. We present an integrated empirical model of congressional seat shares from 1868 to 2024, showing that midterm losses for the president’s party are consistent and robust in both chambers. We find little evidence of presidential-year gains but strong evidence of dependence. Extending the analysis to vote shares following the Seventeenth Amendment, we observe similar patterns across chambers. Our results reveal the persistent impact of electoral rhythms over more than a century and demonstrate the value of macro-level analysis in understanding institutional dynamics within the American constitutional order.</div>
-       
-          <br>
-          <br>-->
-
-          <br>   
-          <br>
-    <p style="margin-bottom:0; display:inline">  Sample Complexity for Open-Ended Responses </p> 
-    <p style="margin-bottom:0; display:inline;color:#666; font-size:smaller">(with Perry Carter and Narrelle Gilchrist)</p>
-
-
-   <!--         <br>
-         <br>
-         <p style="margin-bottom:0; display:inline">Regulatory Capacity and Corporate Political Disengagement </p>
-         <span style="margin-bottom:0; color:#666; font-size:smaller">(with Kyuwon Lee)</span>
-         <span class="buttonbar">[ 
-           <button class="button" onclick="button(&quot;abs5&quot;)">abstract</button>
-        | <a href="https://osf.io/preprints/osf/ymqds" target="_blank">paper</a> 
-           | <button class="button" onclick="button(&quot;pres4&quot;)">presentations</button>  
-         ]</span>
-         <div class="popup" id="abs5" style="display:none">Although there are public concerns about the declining capacity of regulatory agencies and its impact on regulatory outcomes, such decline could also lead regulated firms to disengage themselves from politics. We examine whether and how firms reduce their campaign contributions in response to decreases in state-level regulatory capacity. To do so, we collect original datasets on the workforce size of U.S. state environmental agencies and leverage variations in workforce shocks that arise from the gap between actual and appropriated workforce sizes. Our analysis reveals that state environmental agencies' workforce shocks decrease firms' donations to state legislators, particularly to those in the majority party and the Democratic party, but do not affect firms' contributions to their ideological allies. We also find that existing state-level restrictions on corporate donations do not moderate firms' political responsiveness. Overall, this article provides a nuanced picture of how diminishing regulatory capacity could shape corporate political activities.</div>
-            <div class="popup" id="paperlink2" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div> 
-         <div class="popup" id="pres4" style="display:none"> <li> 2024 American Political Science Association, Philadelphia </li>
-           <li> 2024 Money in Politics Conference, Copenhagen Business School </li>
-           <li> Conference on Bureaucratic and Interest Group Politics, Princeton University </li>
-           <li> 2024 Midwest Political Science Association, Chicago</li>
-           </div> -->
-       
-
-     <br>
-  
-    
-     
-    
-  
-
-
-
-
-
-
-    
-
-   
-  <!--  <p style="margin-bottom:0"> How Do Bureaucrats Learn in Absence of Autonomous Sources of Expertise?</p>
-
-  ] </span> 
-  <div class="popup" id="abs8" style="display:none">A large body of literature points to bureaucratic expertise as an important factor in policy outcomes, while the question of how bureaucrats obtain policy-relevant information is relatively understudied. I demonstrate that in a policy environment where policy-specific expertise is concentrated in firms, the bureaucratic acquisition of expertise is contingent upon the political influence of private interests.  Using an original dataset revealing the bureaucratic monitoring behavior of the Greenhouse Gas Reporting Program with a new measure of partisan alignment between firms and bureaucracy, I examine the practices of how bureaucrats collect information from regulated entities. This paper highlights the underlying, but underappreciated, sources of bureaucratic expertise when establishing an autonomous source of information is impossible.</div>
-  <div class="popup" id="paperlink" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div>
-  <div class="popup" id="pres8" style="display:none"> 
-    <li> 2024 American Political Science Association, Philadelphia </li>
-    <li> Princeton Institutions Working Group </li>
-    </div>
-  <br> -->
-
-
- <!--  <p style="margin-bottom:0; display:inline"> Politics of Academic Experts </p>
-  <span style="margin-bottom:0; color:#666">(with <a href="https://www.princeton.edu/~nmccarty/" style=" color: inherit;" target="_blank">Nolan McCarty</a>)</span>
-  <br>
-  <br>
-
-  <p style="margin-bottom:0; display:inline"> The Supply and Demand of Political Interest Groups </p>
-  <span style="margin-bottom:0; color:#666">(with <a href="https://ccameron.scholar.princeton.edu/" style=" color: inherit;" target="_blank">Charles Cameron</a>)</span>
-  <br>
-  <br>
-
-
-  <p style="margin-bottom:0; display:inline">  Politics of Scientific Knowledge Production </p>
-  <br>
-  <br>
-
-
-  <p style="margin-bottom:0; display:inline">  Sample Complexity For Open-Ended Survey Responses </p>
-  <p style="margin-bottom:0; display:inline; color:#666"> (with <a href="https://pjesscarter.github.io/" style="color: inherit;" target="_blank">Perry Carter</a> and <a href="https://narrelleg.github.io/" style="color: inherit;" target="_blank">Narrelle Gilchrist</a>)</p> -->
-
- <!--   <span class="buttonbar">[ 
-    <a href="documents/scb_open.pdf" target="_blank">poster</a> 
-    | <button class="button" onclick="button(&quot;pres6&quot;)">presentations</button>
-    ] </span>
-    <div class="popup" id="pres6" style="display:none"> 
-      <li> 2024 American Political Science Association, Philadelphia </li>
-      <li> 2024 Society for Political Methodology, UC Riverside </li>
-      </div>-->
-  
-
-
-
- 
-
- 
-  <!--
-              <h3>Teaching</h3>
-                
-                 
-                    <p style="margin-bottom:0; display:inline"> POL 574 Quantitative Method IV</p>  
-          
-                    <div class="buttonbar" style="display:inline-block;"> [ 
-                        <button class="button" onclick="button(&quot;course1&quot;)">GRAD, Spring 2022</button>
-                     ]</div>
-                     <div class="popup" id="course1" style="display:none"> This is the most advanced graduate-level course in the politics method training sequence. The class covers a variety of supervised and unsupervised learning techniques, including both
-                      mechanical and probabilistic models, and computational methods for the analysis of new types of data, including text, networks, audio, and images (instructor: John Londregan).
-                       </div> 
-                     <br>
-                     <br>
-
-
-                  <p style="margin-bottom:0; display:inline"> POL 345 Quantitative Social Science</p> 
-                  <div class="buttonbar" style="display:inline-block;">[ 
-                    <button class="button" onclick="button(&quot;course2&quot;)">UGRD, Fall 2021</button>
-                     ]</div>
-                     <div class="popup" id="course2" style="display:none"> This is the undergraduate-level politics method training sequence. The class covers a variety of topics in statistics and causal inference (instructor: Marc Ratkovic).
-                       </div> 
-                     <br>
-                     <br>
-
-
-
-                      
-                  <p style="margin-bottom:0; display:inline"> POL 245 Visualizing Data</p> 
-                  <div class="buttonbar" style="display:inline-block;">[ 
-                    <button class="button" onclick="button(&quot;course3&quot;)">UGRD, Summer 2021</button>
-                     ]</div>
-                     <div class="popup" id="course3" style="display:none"> This is the first course in R and basic statistics for incoming freshmen in Princeton. It is one of the classes offered for <a href="https://fsi.princeton.edu/fsi-experience/academic-experience" target="_blank">Freshman Scholars Institute</a> (instructor: Brandon Stewart).
-                       </div> 
-                     <br>  -->
-
-        
-                  
-
-                     <br>
-                     <br>
-                
-                
-                     <h3>Publications</h3>
-                
-                     <p style="margin-bottom:0">Fine-tuned Large Language Models Can Replicate Expert Coding Better than Trained Coders: A Study on Informative Signals Sent by Interest Groups (with <a href="https://bstewart.scholar.princeton.edu/" style="color: inherit;" target="_blank">Brandon Stewart</a> and <a href="https://denis.ai/" style="color: inherit;" target="_blank">Denis Peskoff</a>)</p>
-                      <!--   <span style="margin-bottom:0;color:#666; font-size:smaller">(with <a href="https://bstewart.scholar.princeton.edu/" style="color: inherit;" target="_blank">Brandon Stewart</a> and <a href="https://denis.ai/" style="color: inherit;" target="_blank">Denis Peskoff</a>).</span> -->
-                       <span style="margin-bottom:0; color:#666">Forthcoming in  </span>
-                       <strong><em><span style="margin-bottom:0; text-decoration: inherit; color:#990000"> Political Science Research and Methods</em></span></strong>
-                       
-                       <span class="buttonbar">[ 
-                           <button class="button" onclick="button(&quot;abs2&quot;)">abstract</button>
-                           | <a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/finetuned-large-language-models-can-replicate-expert-coding-better-than-trained-coders-a-study-on-informative-signals-sent-by-interest-groups/55DDE48ECD26AB91D7888E36BDBC165A" target="_blank">paper</a> 
-                            <!--  | <a class="button" onclick="button(&quot;paperlink2&quot;)">paper</a> 
-                                | <button class="button" onclick="button(&quot;pres2&quot;)">presentations</button> -->
-                       ]</span>
-                       
-                       <div class="popup" id="abs2" style="display:none">
-                         Understanding the political process in the United States requires examining how information is provided to politicians and the general public. While existing studies point to interest groups as strategic information providers, studying this aspect empirically has been challenging due to the need for expert-level annotation in measurement. We make two contributions.  First, we demonstrate that fine-tuned large language models (LLMs) can replicate expert-level annotation in a specialized area above the accuracy of lightly-trained workers, crowd-workers, and zero-shot LLMs. Second, we quantify two types of interest group signals that are difficult to separate empirically using other means: 1) informative signals that help agents improve political decisions, and 2) associative signals that influence preference formation but lack direct relevance to the substantive topic of interest. We demonstrate the utility of this approach using two applications where our classifier generalizes out of distribution. This study shows methodologically the applicability of large language models for complex expert-driven measurement tasks but also shows substantively that interest groups strategically tailor the composition of signals under different institutional settings.
-                       </div>
-                       <div class="popup" id="paperlink2" style="display:none"> <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft</div>
-                       <div class="popup" id="pres2" style="display:none"> 
-                           <li> 2023 American Political Science Association, Los Angeles</li>
-                           <li> 2022 Society for Political Methodology, Washington University in St. Louis </li>
-                          <!--      <li> 2023 International Studies Association, Montréal ; display:inline;</li>-->
-                       </div>
-                
-                     <br>
-                     <br>
-                
-                
-                     <p style="margin-bottom:0">Why Interest Groups With Divergent Goals Collaborate: Evidence From Climate Regulation</p>
-                       <span style="margin-bottom:0; color:#666; display:inline;"> Forthcoming in </span>
-                       <strong> <em><span style="margin-bottom:0; text-decoration: inherit; color:#990000"> Economics and Politics</span></em></strong>
-                       <span class="buttonbar">[ 
-                           <button class="button" onclick="button(&quot;abs1&quot;)">abstract</button>
-                           | <a href="documents/ClimateInfo_November23.pdf" target="_blank">paper</a> 
-                         <!--   | <button class="button" onclick="button(&quot;pres1&quot;)">presentations</button> -->
-                       ]</span>
-                       <div class="popup" id="abs1" style="display:none">
-                           Why do interest groups with contrasting interests and policy goals work together? I present a theory of collaborative policy production and show that interest groups can achieve higher policy gains through collaboration, even though their ideal policy goals may diverge significantly. To test theoretical results, I introduce original measurement strategies that reveal systematic patterns in which firms and environmental groups invest in joint efforts to improve fine-grained details of policy to achieve greenhouse gas emissions targets. The analysis, using public comments spanning 2010-2020, demonstrates that comments written jointly by environmental groups and firms contain more information that can contribute to the quality of policy implementation than individual efforts alone, despite compromises on policy preferences. These findings highlight the hidden dynamics of regulatory politics, wherein divergent political goals are reconciled for high-quality policy implementation.
-                           <br>
-                       </div>
-                       <div class="popup" id="pres1" style="display:none"> 
-                           <li> Political Economy of Climate and the Environment, University of Pennsylvania </li>
-                           <li> Frontiers in Money in Politics Research, University of Southern California </li>
-                           <li> 2023 American Political Science Association, Los Angeles </li>
-                           <li> 2023 Money in Politics Conference, Copenhagen Business School </li>
-                           <li> Climate Pipeline Project, Brown University </li>
-                           <li> 2023 Midwest Political Science Association, Chicago </li>
-                           <li> 2022 Environmental Politics and Governance, Virtual conference </li>
-                           <li> 2022 International Political Economy Society, University of Pittsburgh </li>
-                       </div>
-                
-                       <br>
-                       <br>
-                       <br>
-
-
-       
-
-                       <h3>Software </h3>
-                       <div style="display:inline-block; margin-bottom:0;">
-                         <strong><a href="https://cran.r-project.org/web/packages/scR/index.html">scR</a></strong>
-                         (available on CRAN, with Perry Carter)
-                         [
-                         <button class="button" onclick="button('package1')">description</button>
-                         <!-- | <a class="button" onclick="button('paperlink2')">paper</a> -->
-                         <!-- | <button class="button" onclick="button('pres2')">presentations</button> -->
-                         ]
-                       </div>
-                       
-                       <div class="popup" id="package1" style="display:none;">
-                         scR is an R package developed by Carter & Choi (2025) designed to help researchers determine how much data is needed for reliable generalization. It provides a design-aware empirical framework that estimates sample complexity using smooth extrapolation of model performance from pilot data. Additionally, scR offers theoretical guidance by calculating Vapnik-Chervonenkis Dimension (VCD). This interpretable diagnostic is particularly helpful for empirical researchers designing data-intensive studies under resource constraints or uncertainty. For more details, see Carter & Choi (2025), "How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity" (doi:10.31219/osf.io/evrcj_v2).
-                       </div>
-                       <div class="popup" id="paperlink2" style="display:none;">
-                         <a href="mailto:dahyunc@princeton.edu">Email</a> for current draft
-                       </div>
-                       <div class="popup" id="pres2" style="display:none;">
-                         <ul style="margin-top: 0;">
-                           <li>2023 American Political Science Association, Los Angeles</li>
-                           <li>2022 Society for Political Methodology, Washington University in St. Louis</li>
-                           <!-- <li>2023 International Studies Association, Montréal</li> -->
-                         </ul>
-                       </div>
-
-
-    </section>
-      <footer>
-        <p><small style="font-size: 10px;">Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="/assets/js/scale.fix.js"></script>
-    <script src="javascripts/scale.fix.js"></script> 
- 
- 
- 
-  </body>
+</body>
 </html>
