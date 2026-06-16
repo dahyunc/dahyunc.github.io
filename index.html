@@ -54,10 +54,23 @@
 
     /* ── Header ── */
     .site-header {
-      text-align: center;
-      padding: 0.8rem 2rem 0.3rem;
-      max-width: 600px;
+      padding: 0.6rem 2rem;
+      max-width: 800px;
       margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .header-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .header-text {
+      text-align: left;
     }
     .site-header h1 {
       font-family: 'EB Garamond', serif;
@@ -76,20 +89,19 @@
 
     /* ── Nav Tabs ── */
     .nav-tabs {
-      max-width: 600px;
-      margin: 0 auto;
       display: flex;
-      justify-content: center;
       gap: 0;
-      padding: 0 2rem;
+      padding: 0.2rem 0 0;
     }
     .nav-tabs a {
       font-family: var(--font-body);
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: var(--color-text-light);
       text-decoration: none;
-      padding: 0.85rem 1.6rem;
+      padding: 0.3rem 0.8rem;
+      padding-left: 0;
+      margin-right: 0.8rem;
       position: relative;
       transition: color 0.2s;
       letter-spacing: 0.03em;
@@ -112,21 +124,6 @@
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 2.5rem 2rem 3rem;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-    .hero-photo {
-      margin: 0;
-      position: sticky;
-      top: 5rem;
-    }
-    .hero-photo img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 50%;
     }
     .hero-bio {
       font-size: 0.95rem;
@@ -210,39 +207,44 @@
       font-size: 1.08rem;
       font-weight: 600;
       color: var(--color-heading);
-      line-height: 1.4;
+      line-height: 1.5;
       cursor: pointer;
       transition: color 0.2s;
       list-style: none;
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
     }
     .pub-item summary::-webkit-details-marker { display: none; }
     .pub-item summary::marker { display: none; content: ''; }
-    .pub-item summary::before {
-      content: '▸';
-      font-size: 0.75rem;
-      color: var(--color-text-light);
-      flex-shrink: 0;
-      display: inline-block;
-    }
-    .pub-item details[open] summary::before {
-      content: '▾';
-      color: var(--color-link);
-    }
     .pub-item summary:hover { color: var(--color-link); }
     .pub-item details[open] summary { color: var(--color-link); }
+    .pub-item summary::before {
+      content: '▸ ';
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+    }
+    .pub-item details[open] summary::before {
+      content: '▾ ';
+      color: var(--color-link);
+    }
+    .summary-meta {
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--color-text-light);
+    }
+    .summary-meta .journal {
+      color: var(--color-link);
+      font-weight: 700;
+      font-style: italic;
+    }
 
-    .pub-venue { font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem; font-style: italic; padding-left: 1.1rem; }
+    .pub-venue { font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem; font-style: italic;  }
     .pub-venue .journal { color: var(--color-link); font-weight: 700; }
-    .pub-coauthors { font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.4rem; padding-left: 1.1rem; }
+    .pub-coauthors { font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.4rem;  }
 
     .pub-abstract {
       margin-top: 0.7rem;
-      margin-left: 1.1rem;
+      
       padding: 1rem 1.5rem;
       background: #f8f6fc;
       border-radius: 6px;
@@ -261,7 +263,7 @@
       color: var(--color-link);
       margin-bottom: 0.5rem;
     }
-    .pub-paper-link { margin-top: 0.6rem; margin-bottom: 0.3rem; margin-left: 1.1rem; }
+    .pub-paper-link { margin-top: 0.6rem; margin-bottom: 0.3rem;  }
     .pub-paper-link a {
       font-size: 0.95rem;
       font-weight: 600;
@@ -291,7 +293,7 @@
       color: var(--color-heading);
       line-height: 1.4;
       margin-bottom: 0.2rem;
-      padding-left: 1.1rem;
+      
     }
 
     /* ── Software ── */
@@ -316,7 +318,6 @@
         justify-items: center;
         text-align: center;
       }
-      .hero-photo { position: static; }
       .hero-bio { text-align: left; }
       .hero-links { text-align: center; line-height: 2.2; }
       .section { padding: 1.5rem 1.3rem 0.5rem; }
@@ -334,7 +335,6 @@
       .sub-section-title { font-size: 1.15rem; }
       .pub-item summary { font-size: 1rem; }
       .pub-title-plain { font-size: 1rem; }
-      .hero-photo img { width: 160px; height: 160px; }
       .hero-links a { font-size: 0.85rem; }
       .hero-links .sep { margin: 0 0.25rem; }
       .pub-paper-link a { font-size: 0.8rem; padding: 0.25rem 0.6rem; }
@@ -346,52 +346,34 @@
 
 <div class="sticky-wrap" id="stickyWrap">
 <header class="site-header">
-  <h1>Dahyun Choi</h1>
-  <div class="header-details">
-    Ph.D. Candidate · Princeton University · <span id="header-email"></span>
+  <img src="img/IMG_2026_2.png" alt="Dahyun Choi" class="header-photo">
+  <div class="header-text">
+    <h1>Dahyun Choi</h1>
+    <div class="header-details">
+      Postdoctoral Fellow · Northwestern Kellogg School of Management · <span id="header-email"></span>
+    </div>
+    <nav class="nav-tabs">
+      <a href="#home" class="active">Home</a>
+      <a href="#research">Research</a>
+      <a href="#software">Software</a>
+      <a href="documents/Choi_CV.pdf" target="_blank">CV</a>
+    </nav>
   </div>
 </header>
-
-<nav class="nav-tabs">
-  <a href="#home" class="active">Home</a>
-  <a href="#research">Research</a>
-  <a href="#software">Software</a>
-  <a href="documents/Choi_CV.pdf" target="_blank">CV</a>
-</nav>
 </div>
 
 <!-- ══════════════════════════ HOME + BIO ══════════════════════════ -->
 <section class="hero" id="home">
-  <div class="hero-photo">
-    <img src="img/IMG_2026_2.png" alt="Dahyun Choi">
-  </div>
   <div>
     <p class="hero-bio">
-      I work on questions in political economy regarding how government institutions and organized interests produce and evaluate information, and strategically shape the scientific and technical foundations of public policy in the American context.
+      I study how government institutions and organized interests produce and evaluate information, and strategically shape the scientific and technical foundations of public policy in the American context. I also develop machine learning methods for measuring political and organizational behavior.
      <!-- I work on core questions across politics, markets, and governance of how government institutions and organized interests produce and evaluate information, and strategically shape the scientific and technical foundations of public policy. Leveraging machine learning, causal inference, and formal theory, I study the settings where regulatory agencies evaluate expertise, interest groups compete over policy implementation and knowledge production, and legislatures direct public investment in innovation. 
      My scholarship is conditionally accepted at the <em>American Journal of Political Science</em> and published or forthcoming in <em>Economics &amp; Politics</em> and <em>Political Science Research and Methods</em>. -->
       <br><br>
-      I also develop machine learning methods for measuring political and organizational behavior. 
-    <!--   I received my Ph.D. in Politics from Princeton University in 2026, with a Graduate Certificate in <a href="https://csml.princeton.edu/graduate/certificate-program" target="_blank" style="color: var(--color-link); text-decoration: none;">Statistics and Machine Learning</a>. -->
+     I received my Ph.D. in Politics from Princeton University in 2026, with a Graduate Certificate in <a href="https://csml.princeton.edu/graduate/certificate-program" target="_blank" style="color: var(--color-link); text-decoration: none;">Statistics and Machine Learning</a>. 
     </p>
   </div>
 </section>
-
-<div class="home-extra">
-  <h3>Recent News</h3>
-  <div class="home-extra-item">
-    <span class="he-date">May 2026</span>
-    <span class="he-title">Scheduled to give a talk at Northwestern Kellogg (Political Economy Rookiefest)</span>
-</div>
-<div class="home-extra-item">
-    <span class="he-date">May 2026</span>
-    <span class="he-title">Scheduled to give a talk at Cornell (Congress & History Conference)</span>
-</div>
- <!--  <div class="home-extra-item">
-    <span class="he-date">2026</span>
-    <span class="he-title">Presenting at Cornell (Congress &amp; History)</span>
-  </div> -->
-</div>
 
 <div class="section-divider"><hr></div>
 
@@ -399,39 +381,9 @@
 <section class="section" id="research">
 
   <h3 class="sub-section-title">Peer-Reviewed Publications</h3>
-
   <div class="pub-item">
     <details>
-      <summary>Fine-tuned Large Language Models Can Replicate Expert Coding Better than Trained Coders: A Study on Informative Signals Sent by Interest Groups</summary>
-      <div class="pub-abstract">
-        Understanding the political process in the United States requires examining how information is provided to politicians and the general public. While existing studies point to interest groups as strategic information providers, studying this aspect empirically has been challenging due to the need for expert-level annotation in measurement. We make two contributions. First, we demonstrate that fine-tuned large language models (LLMs) can replicate expert-level annotation in a specialized area above the accuracy of lightly-trained workers, crowd-workers, and zero-shot LLMs. Second, we quantify two types of interest group signals that are difficult to separate empirically using other means: 1) informative signals that help agents improve political decisions, and 2) associative signals that influence preference formation but lack direct relevance to the substantive topic of interest. We demonstrate the utility of this approach using two applications where our classifier generalizes out of distribution. This study shows methodologically the applicability of large language models for complex expert-driven measurement tasks but also shows substantively that interest groups strategically tailor the composition of signals under different institutional settings.
-      </div>
-      <div class="pub-paper-link">
-        <a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/finetuned-large-language-models-can-replicate-expert-coding-better-than-trained-coders-a-study-on-informative-signals-sent-by-interest-groups/55DDE48ECD26AB91D7888E36BDBC165A" target="_blank">Paper</a>
-      </div>
-    </details>
-    <p class="pub-coauthors">with Brandon Stewart and Denis Peskoff</p>
-    <p class="pub-venue">Forthcoming in <span class="journal">Political Science Research and Methods</span></p>
-  </div>
-
-  <div class="pub-item">
-    <details>
-      <summary>Why Interest Groups With Divergent Goals Collaborate: Evidence From Climate Regulation</summary>
-      <div class="pub-abstract">
-        Why do interest groups with contrasting interests and policy goals work together? I present a theory of collaborative policy production and show that interest groups can achieve higher policy gains through collaboration, even though their ideal policy goals may diverge significantly. To test theoretical results, I introduce original measurement strategies that reveal systematic patterns in which firms and environmental groups invest in joint efforts to improve fine-grained details of policy to achieve greenhouse gas emissions targets. The analysis, using public comments spanning 2010-2020, demonstrates that comments written jointly by environmental groups and firms contain more information that can contribute to the quality of policy implementation than individual efforts alone, despite compromises on policy preferences. These findings highlight the hidden dynamics of regulatory politics, wherein divergent political goals are reconciled for high-quality policy implementation.
-      </div>
-      <div class="pub-paper-link">
-        <a href="https://onlinelibrary.wiley.com/doi/10.1111/ecpo.70009" target="_blank">Paper</a>
-      </div>
-    </details>
-    <p class="pub-venue">2026. <span class="journal">Economics &amp; Politics</span>, 38: 46–61.</p>
-  </div>
-
-  <h3 class="sub-section-title">Working Papers</h3>
-
-  <div class="pub-item">
-    <details>
-      <summary>Partisan Bias and the Resilience of High-Impact Science</summary>
+      <summary>Partisan Bias and the Resilience of High-Impact Science. <span class="summary-meta">Accepted. <span class="journal">American Journal of Political Science</span>.</span></summary>
       <div class="pub-abstract">
         How do partisan bias and scholarly impact within academic communities jointly shape the use of evidence in regulatory policymaking? I investigate this question using a novel dataset of 16,783 peer-reviewed studies evaluated by the Environmental Protection Agency for the Integrated Science Assessments (ISA), which inform the National Ambient Air Quality Standards. I find that Democratic administrations are 15.4% more likely to cite pro-regulatory studies, while Republican administrations are 17.5% less likely to do so. These effects correspond to a two-standard-deviation change in study impact measures. Yet partisan bias is moderated by evidentiary impact: high-impact studies are cited consistently across administrations, while lower-impact studies are less penalized when aligned with an administration's policy agenda. Evidence on participant selection in the ISA process suggests a plausible mechanism underlying this pattern. Together, the findings suggest that while science retains epistemic authority, its application is shaped by political context within the administrative state.
 
@@ -440,12 +392,39 @@
         <a href="https://drive.google.com/file/d/1db8K4rv-2FTK-YoubJHTBjBAfb0VE7uv/view?usp=sharing" target="_blank">Paper</a>
       </div>
     </details>
-    <p class="pub-venue">Revise &amp; Resubmit at <span class="journal">American Journal of Political Science</span></p>
   </div>
 
   <div class="pub-item">
     <details>
-      <summary>How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity</summary>
+      <summary>Fine-tuned Large Language Models Can Replicate Expert Coding Better than Trained Coders: A Study on Informative Signals Sent by Interest Groups. <span class="summary-meta">Forthcoming. Joint with Brandon Stewart and Denis Peskoff. <span class="journal">Political Science Research and Methods</span>.</span></summary>
+      <div class="pub-abstract">
+        Understanding the political process in the United States requires examining how information is provided to politicians and the general public. While existing studies point to interest groups as strategic information providers, studying this aspect empirically has been challenging due to the need for expert-level annotation in measurement. We make two contributions. First, we demonstrate that fine-tuned large language models (LLMs) can replicate expert-level annotation in a specialized area above the accuracy of lightly-trained workers, crowd-workers, and zero-shot LLMs. Second, we quantify two types of interest group signals that are difficult to separate empirically using other means: 1) informative signals that help agents improve political decisions, and 2) associative signals that influence preference formation but lack direct relevance to the substantive topic of interest. We demonstrate the utility of this approach using two applications where our classifier generalizes out of distribution. This study shows methodologically the applicability of large language models for complex expert-driven measurement tasks but also shows substantively that interest groups strategically tailor the composition of signals under different institutional settings.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/finetuned-large-language-models-can-replicate-expert-coding-better-than-trained-coders-a-study-on-informative-signals-sent-by-interest-groups/55DDE48ECD26AB91D7888E36BDBC165A" target="_blank">Paper</a>
+      </div>
+    </details>
+  </div>
+
+  <div class="pub-item">
+    <details>
+      <summary>Why Interest Groups With Divergent Goals Collaborate: Evidence From Climate Regulation. <span class="summary-meta">2026. <span class="journal">Economics &amp; Politics</span>, 38: 46–61.</span></summary>
+      <div class="pub-abstract">
+        Why do interest groups with contrasting interests and policy goals work together? I present a theory of collaborative policy production and show that interest groups can achieve higher policy gains through collaboration, even though their ideal policy goals may diverge significantly. To test theoretical results, I introduce original measurement strategies that reveal systematic patterns in which firms and environmental groups invest in joint efforts to improve fine-grained details of policy to achieve greenhouse gas emissions targets. The analysis, using public comments spanning 2010-2020, demonstrates that comments written jointly by environmental groups and firms contain more information that can contribute to the quality of policy implementation than individual efforts alone, despite compromises on policy preferences. These findings highlight the hidden dynamics of regulatory politics, wherein divergent political goals are reconciled for high-quality policy implementation.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://onlinelibrary.wiley.com/doi/10.1111/ecpo.70009" target="_blank">Paper</a>
+      </div>
+    </details>
+  </div>
+
+  <h3 class="sub-section-title">Working Papers</h3>
+
+  
+
+  <div class="pub-item">
+    <details>
+      <summary>How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity. <span class="summary-meta">R&amp;R. Joint with Perry Carter. <span class="journal">American Journal of Political Science</span>.</span></summary>
       <div class="pub-abstract">
         How much data is needed to ensure that a model performs reliably on new, unseen data? Despite its central importance to empirical research design, sample size decisions are often made heuristically—guided more by resource constraints than by principled diagnostics. Existing tools like power analysis and cross-validation offer limited insight into how predictive performance scales with sample size. We introduce a design-aware, empirical framework for estimating sample complexity bounds tailored to applied settings. By fitting smooth extrapolation functions to model performance from resampled pilot data, our method estimates the sample size needed to achieve researcher-specified generalization guarantees. Through applications to supervised learning tasks involving extensive human-annotated data, we show that generalization often stabilizes with as little as 10% of typical labeling costs. This approach provides a statistically grounded, interpretable diagnostic for generalization performance and a practical tool for political scientists designing data-intensive studies under resource constraints or design uncertainty.
       </div>
@@ -453,8 +432,6 @@
         <a href="https://osf.io/preprints/osf/evrcj_v2" target="_blank">Paper</a>
       </div>
     </details>
-    <p class="pub-coauthors">with Perry Carter</p>
-    <p class="pub-venue">Revise &amp; Resubmit at <span class="journal">American Journal of Political Science</span></p>
   </div>
 
   <div class="pub-item">
@@ -466,13 +443,11 @@
   </div>
 
   <div class="pub-item">
-    <div class="pub-title-plain">Politics of Academic Experts: Evidence from Antitrust Regulations</div>
-    <p class="pub-coauthors">with Nolan McCarty</p>
+    <div class="pub-title-plain">Politics of Academic Experts: Evidence from Antitrust Regulations. <span class="summary-meta">Joint with Nolan McCarty.</span></div>
   </div>
 
   <div class="pub-item">
-    <div class="pub-title-plain">Interest Group Ecologies and Ideological Niches</div>
-    <p class="pub-coauthors">with Charles Cameron</p>
+    <div class="pub-title-plain">Interest Group Ecologies and Ideological Niches. <span class="summary-meta">Joint with Charles Cameron.</span></div>
   </div>
 
   <!--  <div class="pub-item">
@@ -556,7 +531,7 @@
   });
 
   // Email
-  var u = 'dahyunc'; var d = 'princeton.edu';
+  var u = 'dahyun.choi'; var d = 'kellogg.northwestern.edu';
   var headerEmail = document.getElementById('header-email');
   if (headerEmail) {
     var a = document.createElement('a');
