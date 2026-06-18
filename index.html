@@ -190,21 +190,21 @@
     }
     .sub-section-title {
       font-size: 1.25rem;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--color-heading);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      text-transform: none;
+      letter-spacing: 0;
       margin-bottom: 1.5rem;
       margin-top: 4rem;
     }
     .sub-section-title:first-of-type { margin-top: 0; }
 
     /* ── Publication Item (details/summary) ── */
-    .pub-item { margin-bottom: 2.2rem; }
+    .pub-item { margin-bottom: 1.2rem; }
     .pub-item details { margin-bottom: 0.2rem; }
     .pub-item summary {
       font-family: var(--font-body);
-      font-size: 1.08rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--color-heading);
       line-height: 1.5;
@@ -228,7 +228,7 @@
       color: var(--color-link);
     }
     .summary-meta {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       font-weight: 400;
       color: var(--color-text-light);
     }
@@ -288,7 +288,7 @@
 
     .pub-title-plain {
       font-family: var(--font-body);
-      font-size: 1.08rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--color-heading);
       line-height: 1.4;
@@ -354,9 +354,9 @@
     </div>
     <nav class="nav-tabs">
       <a href="#home" class="active">Home</a>
-      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#working-papers">Working Papers</a>
       <a href="#software">Software</a>
-      <a href="documents/Choi_CV.pdf" target="_blank">CV</a>
     </nav>
   </div>
 </header>
@@ -378,9 +378,9 @@
 <div class="section-divider"><hr></div>
 
 <!-- ══════════════════════════ RESEARCH ══════════════════════════ -->
-<section class="section" id="research">
+<section class="section" id="publications">
 
-  <h3 class="sub-section-title">Peer-Reviewed Publications</h3>
+  <h3 class="sub-section-title">Publications</h3>
   <div class="pub-item">
     <details>
       <summary>Partisan Bias and the Resilience of High-Impact Science. <span class="summary-meta">Accepted. <span class="journal">American Journal of Political Science</span>.</span></summary>
@@ -418,6 +418,12 @@
     </details>
   </div>
 
+</section>
+
+<div class="section-divider"><hr></div>
+
+<section class="section" id="working-papers">
+
   <h3 class="sub-section-title">Working Papers</h3>
 
   
@@ -435,6 +441,15 @@
   </div>
 
   <div class="pub-item">
+    <details>
+      <summary>Dynamics of the Party System. <span class="summary-meta">Joint with Charles Cameron.</span></summary>
+      <div class="pub-abstract">
+        Why does neither party dominate American presidential elections permanently? We present the first direct estimates of the major party restoring forces long suspected but never formally identified. We model each party as a “restless bandit” whose performance stochastically decays and renews, and derive the optimal voting rule for a rational electorate. The resulting two-parameter system yields a three-state Markov chain. When decay and renewal rates sum to one, elections become exactly independent, because four years of stochastic evolution erase each party’s initial condition. Using annual indicators of presidential performance from 1865 to 2024, we estimate an annual decay rate of 0.48 and a renewal rate of 0.43, placing the system near this knife-edge. The model fits observed run lengths and switching patterns. Rolling-window estimates point to a possible decline in the renewal-to-decay ratio over the twentieth century.
+      </div>
+    </details>
+  </div>
+
+  <div class="pub-item">
     <div class="pub-title-plain">When Algorithms Govern</div>
   </div>
 
@@ -447,7 +462,7 @@
   </div>
 
   <div class="pub-item">
-    <div class="pub-title-plain">Interest Group Ecologies and Ideological Niches. <span class="summary-meta">Joint with Charles Cameron.</span></div>
+    <div class="pub-title-plain">Locus of Organizational Bias. <span class="summary-meta">Joint with Charles Cameron.</span></div>
   </div>
 
   <!--  <div class="pub-item">
