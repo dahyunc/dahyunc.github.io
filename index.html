@@ -17,7 +17,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Gamja+Flower&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --color-bg: #ffffff;
@@ -42,83 +42,36 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Sticky Header + Nav wrapper ── */
-    .sticky-wrap {
+    /* ── Top Nav Bar (jalexbae style) ── */
+    .top-nav {
       position: sticky;
       top: 0;
       background: rgba(255,255,255,0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       z-index: 100;
+      border-bottom: 1px solid #f0f0f0;
     }
-
-    /* ── Header ── */
-    .site-header {
-      padding: 0.6rem 2rem;
-      max-width: 800px;
+    .top-nav-inner {
+      max-width: var(--max-width);
       margin: 0 auto;
+      padding: 0.65rem 2rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
-      justify-content: center;
-      transition: padding 0.25s ease;
+      justify-content: space-between;
     }
-    .header-photo {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .header-text {
-      text-align: left;
-    }
-    .site-header h1 {
+    .nav-name {
       font-family: 'EB Garamond', serif;
-      font-size: 2.2rem;
+      font-size: 1.75rem;
       font-weight: 700;
       color: var(--color-heading);
       letter-spacing: 0.02em;
-      line-height: 1.2;
-      margin-bottom: 0.15rem;
-      transition: font-size 0.25s ease, margin-bottom 0.25s ease;
+      text-decoration: none;
     }
-    .site-header .header-details {
-      font-size: 0.82rem;
-      color: var(--color-text-light);
-      line-height: 1.5;
-      overflow-wrap: break-word;
-      max-height: 3rem;
-      overflow: hidden;
-      transition: max-height 0.25s ease, opacity 0.2s ease, margin 0.25s ease;
-    }
-
-    /* ── Compact header on scroll (desktop sticky only) ── */
-    .sticky-wrap.scrolled .site-header {
-      padding-top: 0.3rem;
-      padding-bottom: 0.3rem;
-    }
-    .sticky-wrap.scrolled .header-photo {
-      width: 60px;
-      height: 60px;
-    }
-    .sticky-wrap.scrolled .site-header h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0;
-    }
-    .sticky-wrap.scrolled .site-header .header-details {
-      max-height: 0;
-      opacity: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    /* ── Nav Tabs ── */
     .nav-tabs {
       display: flex;
       gap: 0;
-      padding: 0.2rem 0 0;
+      align-items: center;
     }
     .nav-tabs a {
       font-family: var(--font-body);
@@ -126,9 +79,8 @@
       font-weight: 600;
       color: var(--color-text-light);
       text-decoration: none;
-      padding: 0.3rem 0.8rem;
-      padding-left: 0;
-      margin-right: 0.8rem;
+      padding: 0.3rem 0;
+      margin-left: 1.6rem;
       position: relative;
       transition: color 0.2s;
       letter-spacing: 0.03em;
@@ -146,17 +98,44 @@
       background: var(--color-link);
     }
 
-    /* ── Hero ── */
+    /* ── Hero (large intro section) ── */
     .hero {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 2.5rem 2rem 1.5rem;
+      padding: 2.5rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--color-heading);
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+      margin-bottom: 1.6rem;
+    }
+    .hero-subtitle a { color: var(--color-link); text-decoration: none; }
+    .hero-photo img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
     }
     .hero-bio {
       font-size: 0.95rem;
-      line-height: 1.5;
+      line-height: 1.55;
       color: var(--color-text);
     }
+
     .hero-links {
       margin-top: 1.5rem;
       font-size: 1.02rem;
@@ -168,6 +147,141 @@
     }
     .hero-links a:hover { text-decoration: underline; }
     .hero-links .sep { margin: 0 0.45rem; color: #bbb; }
+
+    /* ── Tab Pages ── */
+    .tab-page { display: none; }
+    .tab-page.active { display: block; animation: pageIn 0.25s ease; }
+    @keyframes pageIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Selected Publications (home) ── */
+    .selected-pubs {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 2rem 2.5rem;
+    }
+    .selected-pubs-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 1.4rem;
+    }
+    .selected-pubs-header h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-heading);
+    }
+    .view-all {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-link);
+      text-decoration: none;
+    }
+    .view-all:hover { text-decoration: underline; }
+
+    /* ── Research Layout: sidebar + main ── */
+    .research-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 3rem;
+      padding: 2rem 2rem 2rem;
+      align-items: start;
+    }
+    .research-main {
+      padding: 0;
+      max-width: none;
+    }
+    .tag-sidebar {
+      position: sticky;
+      top: 4.5rem;
+    }
+    .tag-group { margin-bottom: 1.5rem; }
+    .tag-group-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-light);
+      margin-bottom: 0.5rem;
+    }
+    .tag-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.3rem 0.6rem;
+      border: none;
+      border-left: 2px solid transparent;
+      background: transparent;
+      color: var(--color-text-light);
+      cursor: pointer;
+      transition: all 0.15s;
+      line-height: 1.35;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .tag-btn:hover { color: var(--color-link); border-left-color: #d4c8e8; }
+    .tag-btn.active {
+      color: var(--color-link);
+      font-weight: 700;
+      border-left-color: var(--color-link);
+    }
+    .pub-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+    }
+    .pub-tags span {
+      font-size: 0.72rem;
+      color: var(--color-text-light);
+      background: transparent;
+      padding: 0.1rem 0.55rem;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      letter-spacing: 0.01em;
+    }
+    .pub-tags span.domain {
+      color: var(--color-link);
+      border-color: #d4c8e8;
+      font-weight: 600;
+    }
+    .pub-item.hidden { display: none; }
+    .sub-section-title.hidden { display: none; }
+    .no-results {
+      color: var(--color-text-light);
+      font-style: italic;
+      padding: 1rem 0;
+    }
+    .sel-pub {
+      margin-bottom: 1.3rem;
+    }
+    .sel-pub .sp-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--color-heading);
+      line-height: 1.45;
+    }
+    .sel-pub .sp-authors {
+      font-size: 0.88rem;
+      color: var(--color-text-light);
+      line-height: 1.4;
+    }
+    .sel-pub .sp-venue {
+      font-size: 0.88rem;
+      color: var(--color-text-light);
+    }
+    .sel-pub .sp-venue .journal {
+      color: var(--color-link);
+      font-weight: 700;
+      font-style: italic;
+    }
+
 
     /* ── News & Selected Research on Home ── */
     .home-extra {
@@ -255,9 +369,12 @@
       color: var(--color-link);
     }
     .summary-meta {
-      font-size: 0.95rem;
+      display: block;
+      font-size: 0.9rem;
       font-weight: 400;
       color: var(--color-text-light);
+      margin-top: 0.15rem;
+      line-height: 1.45;
     }
     .summary-meta .journal {
       color: var(--color-link);
@@ -341,87 +458,95 @@
     @media (max-width: 700px) {
       .hero {
         grid-template-columns: 1fr;
-        padding: 1.5rem 1.3rem 0.5rem;
+        padding: 2rem 1.3rem 0.5rem;
         justify-items: center;
-        text-align: center;
       }
+      .hero-photo { order: -1; }
+      .hero-photo img { width: 150px; height: 150px; }
+      .hero-text { text-align: center; }
+      .hero-text h1 { font-size: 2.1rem; }
       .hero-bio { text-align: left; }
       .hero-links { text-align: center; line-height: 2.2; }
       .section { padding: 1.5rem 1.3rem 0.5rem; }
-      .site-header h1 { font-size: 2.1rem; margin-bottom: 0.4rem; }
-      .site-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.85rem;
-        padding: 2rem 1.3rem 1rem;
-      }
-      .header-text { text-align: center; width: 100%; }
-      .header-photo { width: 88px; height: 88px; }
-      .site-header .header-details { font-size: 0.92rem; max-height: none; overflow: visible; }
       .pub-abstract { padding: 0.8rem 1rem; font-size: 0.88rem; }
-      .nav-tabs { position: static; justify-content: center; flex-wrap: wrap; }
-      .nav-tabs a { padding: 0.4rem 0.7rem; margin-right: 0; }
-      .sticky-wrap { position: static; border-bottom: none; }
+      .research-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 1.3rem;
+      }
+      .tag-sidebar { position: static; }
+      .tag-group { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+      .tag-group-label { width: 100%; margin-bottom: 0.3rem; }
+      .tag-btn { width: auto; border-left: none; border: 1px solid var(--color-border); border-radius: 20px; padding: 0.2rem 0.6rem; font-size: 0.75rem; }
+      .tag-btn.active { background: var(--color-link); color: #fff; border-color: var(--color-link); }
+      .top-nav-inner {
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 0.8rem 1.3rem;
+      }
+      .nav-tabs { justify-content: center; flex-wrap: wrap; }
+      .nav-tabs a { margin-left: 0; padding: 0.3rem 0.7rem; }
     }
     @media (max-width: 480px) {
-      .site-header { padding: 2rem 1rem 1.5rem; }
-      .site-header h1 { font-size: 1.8rem; }
-      .site-header .header-details { font-size: 0.85rem; }
+      .hero-text h1 { font-size: 1.8rem; }
+      .hero-subtitle { font-size: 0.85rem; }
       .sub-section-title { font-size: 1.15rem; }
       .pub-item summary { font-size: 1rem; }
       .pub-title-plain { font-size: 1rem; }
       .hero-links a { font-size: 0.85rem; }
       .hero-links .sep { margin: 0 0.25rem; }
       .pub-paper-link a { font-size: 0.8rem; padding: 0.25rem 0.6rem; }
-      .nav-tabs a { padding: 0.6rem 0.7rem; font-size: 0.78rem; }
+      .nav-tabs a { padding: 0.3rem 0.55rem; font-size: 0.78rem; }
+      .nav-name { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
 
-<div class="sticky-wrap" id="stickyWrap">
-<header class="site-header">
-  <img src="img/image2026.PNG" alt="Dahyun Choi" class="header-photo">
-  <div class="header-text">
-    <h1>Dahyun Choi</h1>
-    <div class="header-details">
-      Postdoctoral Fellow · Northwestern Kellogg School of Management<br>
-      <span id="header-email"></span>
+<nav class="top-nav" id="topNav">
+  <div class="top-nav-inner">
+    <a href="#home" class="nav-name">Dahyun Choi</a>
+    <div class="nav-tabs">
+      <a href="#home" class="active">About</a>
+      <a href="#research">Research</a>
+      <a href="#software">Software &amp; Data</a>
     </div>
-    <nav class="nav-tabs">
-      <a href="#home" class="active">Home</a>
-      <a href="#publications">Publications</a>
-      <a href="#working-papers">Working Papers</a>
-      <a href="#software">Software</a>
-    </nav>
   </div>
-</header>
-</div>
+</nav>
 
 <!-- ══════════════════════════ HOME + BIO ══════════════════════════ -->
-<section class="hero" id="home">
-  <div>
+<div class="tab-page active" id="page-home">
+<section class="hero">
+  <div class="hero-photo">
+    <img src="img/image2026.PNG" alt="Dahyun Choi">
+  </div>
+  <div class="hero-text">
     <p class="hero-bio">
-      My research examines how interest groups, firms, and political institutions strategically shape the knowledge that guides public policy — who produces it, how ideology and interests color its evaluation, and which evidence ultimately prevails. These dynamics play out across interest group strategy, the use of scientific and academic expertise in regulatory policymaking, the political forces shaping innovation, and institutional adaptation to emerging arenas like AI governance. I also study electoral competition and political organizations through formal theory, and develop machine learning methods for measuring political behavior.
-     <!-- I work on core questions across politics, markets, and governance of how government institutions and organized interests produce and evaluate information, and strategically shape the scientific and technical foundations of public policy. Leveraging machine learning, causal inference, and formal theory, I study the settings where regulatory agencies evaluate expertise, interest groups compete over policy implementation and knowledge production, and legislatures direct public investment in innovation. 
-     My scholarship is conditionally accepted at the <em>American Journal of Political Science</em> and published or forthcoming in <em>Economics &amp; Politics</em> and <em>Political Science Research and Methods</em>. -->
+      Hello! I'm a Postdoctoral Fellow at the Kellogg School of Management at Northwestern University. My research asks how information shapes public policy: who produces the knowledge that reaches government, how interests and ideology color its application, and which evidence ultimately prevails. I study these questions across regulatory agencies, firms, interest groups, and Congress, in environmental regulation, antitrust, trade, and science policy.
       <br><br>
-     I received my Ph.D. in Politics from Princeton University in 2026, with a Graduate Certificate in <a href="https://csml.princeton.edu/graduate/certificate-program" target="_blank" style="color: var(--color-link); text-decoration: none;">Statistics and Machine Learning</a>. 
+      A second strand asks what happens when the machinery of policymaking is itself automated: where generative AI has been adopted inside government, and how courts, elections, and legislatures govern its use. Across both strands I develop computational and statistical methods for measuring political and organizational text, including tools for research design and for valid inference when the measurement itself comes from a machine.
+      <br><br>
+      I received my Ph.D. in Politics from Princeton University in 2026, with a Graduate Certificate in <a href="https://dais.princeton.edu/academics/sml-graduate-certificate" target="_blank" style="color: var(--color-link); text-decoration: none;">Statistics and Machine Learning</a>.
+    </p>
+    <p class="hero-links">
+      <a href="#" id="email-link">Email</a>
+      <span class="sep">·</span>
+      <a href="https://www.linkedin.com/in/dahyun-choi-4870aa90" target="_blank">LinkedIn</a>
     </p>
   </div>
 </section>
 
+<div class="selected-pubs">
+  <div class="selected-pubs-header">
+    <h3>Selected Publications</h3>
+    <a href="#research" class="view-all">View All →</a>
+  </div>
 
-<!-- ══════════════════════════ RESEARCH ══════════════════════════ -->
-<section class="section" id="publications">
-
-  <h3 class="sub-section-title">Publications</h3>
   <div class="pub-item">
     <details>
-      <summary>Partisan Bias and the Resilience of High-Impact Science. <span class="summary-meta">Accepted. <span class="journal">American Journal of Political Science</span>.</span></summary>
+      <summary>Partisan Bias and the Resilience of High-Impact Science<span class="summary-meta"><span class="journal">American Journal of Political Science</span>, accepted.</span></summary>
       <div class="pub-abstract">
         How do partisan bias and scholarly impact within academic communities jointly shape the use of evidence in regulatory policymaking? I investigate this question using a novel dataset of 16,783 peer-reviewed studies evaluated by the Environmental Protection Agency for the Integrated Science Assessments (ISA), which inform the National Ambient Air Quality Standards. I find that Democratic administrations are 15.4% more likely to cite pro-regulatory studies, while Republican administrations are 17.5% less likely to do so. These effects correspond to a two-standard-deviation change in study impact measures. Yet partisan bias is moderated by evidentiary impact: high-impact studies are cited consistently across administrations, while lower-impact studies are less penalized when aligned with an administration's policy agenda. Evidence on participant selection in the ISA process suggests a plausible mechanism underlying this pattern. Together, the findings suggest that while science retains epistemic authority, its application is shaped by political context within the administrative state.
-
       </div>
       <div class="pub-paper-link">
         <a href="https://drive.google.com/file/d/1db8K4rv-2FTK-YoubJHTBjBAfb0VE7uv/view?usp=sharing" target="_blank">Paper</a>
@@ -431,7 +556,19 @@
 
   <div class="pub-item">
     <details>
-      <summary>Fine-tuned Large Language Models Can Replicate Expert Coding Better than Trained Coders: A Study on Informative Signals Sent by Interest Groups. <span class="summary-meta">Forthcoming. Joint with Brandon Stewart and Denis Peskoff. <span class="journal">Political Science Research and Methods</span>.</span></summary>
+      <summary>How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity<span class="summary-meta">With Perry Carter. <span class="journal">American Journal of Political Science</span>, accepted.</span></summary>
+      <div class="pub-abstract">
+        How much data is needed to ensure that a model performs reliably on new, unseen data? Despite its central importance to empirical research design, sample size decisions are often made heuristically—guided more by resource constraints than by principled diagnostics. Existing tools like power analysis and cross-validation offer limited insight into how predictive performance scales with sample size. We introduce a design-aware, empirical framework for estimating sample complexity bounds tailored to applied settings. By fitting smooth extrapolation functions to model performance from resampled pilot data, our method estimates the sample size needed to achieve researcher-specified generalization guarantees. Through applications to supervised learning tasks involving extensive human-annotated data, we show that generalization often stabilizes with as little as 10% of typical labeling costs. This approach provides a statistically grounded, interpretable diagnostic for generalization performance and a practical tool for political scientists designing data-intensive studies under resource constraints or design uncertainty.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://osf.io/preprints/osf/evrcj_v2" target="_blank">Paper</a>
+      </div>
+    </details>
+  </div>
+
+  <div class="pub-item">
+    <details>
+      <summary>Fine-tuned Large Language Models Can Replicate Expert Coding Better than Trained Coders<span class="summary-meta">With Brandon Stewart and Denis Peskoff. <span class="journal">Political Science Research and Methods</span>, forthcoming.</span></summary>
       <div class="pub-abstract">
         Understanding the political process in the United States requires examining how information is provided to politicians and the general public. While existing studies point to interest groups as strategic information providers, studying this aspect empirically has been challenging due to the need for expert-level annotation in measurement. We make two contributions. First, we demonstrate that fine-tuned large language models (LLMs) can replicate expert-level annotation in a specialized area above the accuracy of lightly-trained workers, crowd-workers, and zero-shot LLMs. Second, we quantify two types of interest group signals that are difficult to separate empirically using other means: 1) informative signals that help agents improve political decisions, and 2) associative signals that influence preference formation but lack direct relevance to the substantive topic of interest. We demonstrate the utility of this approach using two applications where our classifier generalizes out of distribution. This study shows methodologically the applicability of large language models for complex expert-driven measurement tasks but also shows substantively that interest groups strategically tailor the composition of signals under different institutional settings.
       </div>
@@ -443,7 +580,7 @@
 
   <div class="pub-item">
     <details>
-      <summary>Why Interest Groups With Divergent Goals Collaborate: Evidence From Climate Regulation. <span class="summary-meta">2026. <span class="journal">Economics &amp; Politics</span>, 38: 46–61.</span></summary>
+      <summary>Why Interest Groups With Divergent Goals Collaborate: Evidence From Climate Regulation<span class="summary-meta"><span class="journal">Economics &amp; Politics</span>, 2026.</span></summary>
       <div class="pub-abstract">
         Why do interest groups with contrasting interests and policy goals work together? I present a theory of collaborative policy production and show that interest groups can achieve higher policy gains through collaboration, even though their ideal policy goals may diverge significantly. To test theoretical results, I introduce original measurement strategies that reveal systematic patterns in which firms and environmental groups invest in joint efforts to improve fine-grained details of policy to achieve greenhouse gas emissions targets. The analysis, using public comments spanning 2010-2020, demonstrates that comments written jointly by environmental groups and firms contain more information that can contribute to the quality of policy implementation than individual efforts alone, despite compromises on policy preferences. These findings highlight the hidden dynamics of regulatory politics, wherein divergent political goals are reconciled for high-quality policy implementation.
       </div>
@@ -452,19 +589,87 @@
       </div>
     </details>
   </div>
+</div>
+</div>
 
-</section>
+<!-- ══════════════════════════ RESEARCH ══════════════════════════ -->
+<div class="tab-page" id="page-research">
+<div class="research-layout">
 
+  <!-- ── Tag Sidebar ── -->
+  <aside class="tag-sidebar">
+    <div class="tag-group">
+      <div class="tag-group-label">Tags</div>
+      <button class="tag-btn active" data-tag="all">All</button>
+      <button class="tag-btn" data-tag="evidence">Evidence Use in Policymaking</button>
+      <button class="tag-btn" data-tag="bureaucracy">Bureaucracy &amp; Regulation</button>
+      <button class="tag-btn" data-tag="algogov">Algorithmic Governance</button>
+      <button class="tag-btn" data-tag="firms">Firms &amp; Nonmarket Strategy</button>
+      <button class="tag-btn" data-tag="lobbying">Interest Groups &amp; Informational Lobbying</button>
+      <button class="tag-btn" data-tag="techchange">Politics of Technological Change</button>
+      <button class="tag-btn" data-tag="legislative">Legislative Institutions</button>
+      <button class="tag-btn" data-tag="elections">Elections &amp; Accountability</button>
+      <button class="tag-btn" data-tag="textdata">Text as Data &amp; LLM Measurement</button>
+      <button class="tag-btn" data-tag="measurement">Measurement Error &amp; Predicted Variables</button>
+      <button class="tag-btn" data-tag="design">Research Design &amp; Valid Inference</button>
+      <button class="tag-btn" data-tag="formal">Formal Theory</button>
+    </div>
+    <div class="tag-group">
+      <div class="tag-group-label">Policy Domain</div>
+      <button class="tag-btn" data-tag="aipolicy">AI &amp; Technology Policy</button>
+      <button class="tag-btn" data-tag="env">Environmental Regulation</button>
+      <button class="tag-btn" data-tag="sciinnov">Science &amp; Innovation Policy</button>
+      <button class="tag-btn" data-tag="antitrust">Antitrust &amp; Competition Policy</button>
+      <button class="tag-btn" data-tag="trade">Trade Policy</button>
+    </div>
+  </aside>
 
-<section class="section" id="working-papers">
+  <section class="section research-main">
 
-  <h3 class="sub-section-title">Working Papers</h3>
+  <h3 class="sub-section-title" data-section="pubs">Publications</h3>
 
-  
-
-  <div class="pub-item">
+  <div class="pub-item" data-tags="evidence bureaucracy textdata env">
     <details>
-      <summary>How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity. <span class="summary-meta">R&amp;R. Joint with Perry Carter. <span class="journal">American Journal of Political Science</span>.</span></summary>
+      <summary>Partisan Bias and the Resilience of High-Impact Science<span class="summary-meta"><span class="journal">American Journal of Political Science</span>, accepted.</span></summary>
+      <div class="pub-abstract">
+        How do partisan bias and scholarly impact within academic communities jointly shape the use of evidence in regulatory policymaking? I investigate this question using a novel dataset of 16,783 peer-reviewed studies evaluated by the Environmental Protection Agency for the Integrated Science Assessments (ISA), which inform the National Ambient Air Quality Standards. I find that Democratic administrations are 15.4% more likely to cite pro-regulatory studies, while Republican administrations are 17.5% less likely to do so. These effects correspond to a two-standard-deviation change in study impact measures. Yet partisan bias is moderated by evidentiary impact: high-impact studies are cited consistently across administrations, while lower-impact studies are less penalized when aligned with an administration's policy agenda. Evidence on participant selection in the ISA process suggests a plausible mechanism underlying this pattern. Together, the findings suggest that while science retains epistemic authority, its application is shaped by political context within the administrative state.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://drive.google.com/file/d/1db8K4rv-2FTK-YoubJHTBjBAfb0VE7uv/view?usp=sharing" target="_blank">Paper</a>
+      </div>
+    </details>
+    <div class="pub-tags"><span>Evidence Use in Policymaking</span><span>Bureaucracy &amp; Regulation</span><span>Text as Data &amp; LLM Measurement</span><span class="domain">Environmental Regulation</span></div>
+  </div>
+
+  <div class="pub-item" data-tags="lobbying firms textdata measurement trade">
+    <details>
+      <summary>Fine-tuned Large Language Models Can Replicate Expert Coding Better than Trained Coders: A Study on Informative Signals Sent by Interest Groups<span class="summary-meta">With Brandon Stewart and Denis Peskoff. <span class="journal">Political Science Research and Methods</span>, forthcoming.</span></summary>
+      <div class="pub-abstract">
+        Understanding the political process in the United States requires examining how information is provided to politicians and the general public. While existing studies point to interest groups as strategic information providers, studying this aspect empirically has been challenging due to the need for expert-level annotation in measurement. We make two contributions. First, we demonstrate that fine-tuned large language models (LLMs) can replicate expert-level annotation in a specialized area above the accuracy of lightly-trained workers, crowd-workers, and zero-shot LLMs. Second, we quantify two types of interest group signals that are difficult to separate empirically using other means: 1) informative signals that help agents improve political decisions, and 2) associative signals that influence preference formation but lack direct relevance to the substantive topic of interest. We demonstrate the utility of this approach using two applications where our classifier generalizes out of distribution. This study shows methodologically the applicability of large language models for complex expert-driven measurement tasks but also shows substantively that interest groups strategically tailor the composition of signals under different institutional settings.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://www.cambridge.org/core/journals/political-science-research-and-methods/article/finetuned-large-language-models-can-replicate-expert-coding-better-than-trained-coders-a-study-on-informative-signals-sent-by-interest-groups/55DDE48ECD26AB91D7888E36BDBC165A" target="_blank">Paper</a>
+      </div>
+    </details>
+    <div class="pub-tags"><span>Interest Groups &amp; Informational Lobbying</span><span>Firms &amp; Nonmarket Strategy</span><span>Text as Data &amp; LLM Measurement</span><span>Measurement Error &amp; Predicted Variables</span><span class="domain">Trade Policy</span></div>
+  </div>
+
+  <div class="pub-item" data-tags="firms lobbying formal textdata env">
+    <details>
+      <summary>Why Interest Groups With Divergent Goals Collaborate: Evidence From Climate Regulation<span class="summary-meta"><span class="journal">Economics &amp; Politics</span>, 2026, 38: 46–61.</span></summary>
+      <div class="pub-abstract">
+        Why do interest groups with contrasting interests and policy goals work together? I present a theory of collaborative policy production and show that interest groups can achieve higher policy gains through collaboration, even though their ideal policy goals may diverge significantly. To test theoretical results, I introduce original measurement strategies that reveal systematic patterns in which firms and environmental groups invest in joint efforts to improve fine-grained details of policy to achieve greenhouse gas emissions targets. The analysis, using public comments spanning 2010-2020, demonstrates that comments written jointly by environmental groups and firms contain more information that can contribute to the quality of policy implementation than individual efforts alone, despite compromises on policy preferences. These findings highlight the hidden dynamics of regulatory politics, wherein divergent political goals are reconciled for high-quality policy implementation.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://onlinelibrary.wiley.com/doi/10.1111/ecpo.70009" target="_blank">Paper</a>
+      </div>
+    </details>
+    <div class="pub-tags"><span>Firms &amp; Nonmarket Strategy</span><span>Interest Groups &amp; Informational Lobbying</span><span>Formal Theory</span><span>Text as Data &amp; LLM Measurement</span><span class="domain">Environmental Regulation</span></div>
+  </div>
+
+  <div class="pub-item" data-tags="measurement design textdata">
+    <details>
+      <summary>How Much Data Is Enough? A Design-aware Approach to Empirical Sample Complexity<span class="summary-meta">With Perry Carter. <span class="journal">American Journal of Political Science</span>, accepted.</span></summary>
       <div class="pub-abstract">
         How much data is needed to ensure that a model performs reliably on new, unseen data? Despite its central importance to empirical research design, sample size decisions are often made heuristically—guided more by resource constraints than by principled diagnostics. Existing tools like power analysis and cross-validation offer limited insight into how predictive performance scales with sample size. We introduce a design-aware, empirical framework for estimating sample complexity bounds tailored to applied settings. By fitting smooth extrapolation functions to model performance from resampled pilot data, our method estimates the sample size needed to achieve researcher-specified generalization guarantees. Through applications to supervised learning tasks involving extensive human-annotated data, we show that generalization often stabilizes with as little as 10% of typical labeling costs. This approach provides a statistically grounded, interpretable diagnostic for generalization performance and a practical tool for political scientists designing data-intensive studies under resource constraints or design uncertainty.
       </div>
@@ -472,44 +677,101 @@
         <a href="https://osf.io/preprints/osf/evrcj_v2" target="_blank">Paper</a>
       </div>
     </details>
+    <div class="pub-tags"><span>Measurement Error &amp; Predicted Variables</span><span>Research Design &amp; Valid Inference</span><span>Text as Data &amp; LLM Measurement</span></div>
   </div>
 
-  <div class="pub-item">
-    <div class="pub-title-plain">When Algorithms Govern</div>
-  </div>
+  <h3 class="sub-section-title" data-section="wp">Working Papers &amp; Works in Progress</h3>
 
-  <div class="pub-item">
-    <div class="pub-title-plain">Innovation by Design: How Legislative Institutions Shape the Direction of Federal R&amp;D</div>
-  </div>
-
-  <div class="pub-item">
-    <div class="pub-title-plain">Politics of Academic Experts: Evidence from Antitrust Regulations. <span class="summary-meta">Joint with Nolan McCarty.</span></div>
-  </div>
-
-
-  <div class="pub-item">
+  <div class="pub-item" data-tags="evidence firms bureaucracy antitrust">
     <details>
-      <summary>Dynamics of the Party System. <span class="summary-meta">Joint with Charles Cameron.</span></summary>
+      <summary>Politics of Academic Experts: Evidence from Antitrust Laws<span class="summary-meta">With Nolan McCarty.</span></summary>
       <div class="pub-abstract">
-        Why does neither party dominate American presidential elections permanently? We present the first direct estimates of the major party restoring forces long suspected but never formally identified. We model each party as a “restless bandit” whose performance stochastically decays and renews, and derive the optimal voting rule for a rational electorate. The resulting two-parameter system yields a three-state Markov chain. When decay and renewal rates sum to one, elections become exactly independent, because four years of stochastic evolution erase each party’s initial condition. Using annual indicators of presidential performance from 1865 to 2024, we estimate an annual decay rate of 0.48 and a renewal rate of 0.43, placing the system near this knife-edge. The model fits observed run lengths and switching patterns. Rolling-window estimates point to a possible decline in the renewal-to-decay ratio over the twentieth century.
+        We investigate how government regulators use academic research as a function of scholars' political leanings and connections. We use three text-based measures to score each paper's slant on a latent dimension that captures the spectrum from the Chicago School to that of the neo-Brandeisians. In an author-by-paper dyad design, individual ideology scores robustly predict Chicago slant across all three measures. We do not find robust evidence connecting slant to institutional affiliation, however. With our measures, we model how different presidential administrations cite scholarship in their policy documents. We find that Democratic administrations cite antitrust scholarship roughly 1.47× more often. Furthermore, our analysis shows that Chicago-slanted scholarship is cited relatively more under Republican administrations, especially in the Department of Justice. Finally, we find that the political use of expertise is related to the content of the documents, not scholars' political preferences or connections.
       </div>
     </details>
+    <div class="pub-tags"><span>Evidence Use in Policymaking</span><span>Firms &amp; Nonmarket Strategy</span><span>Bureaucracy &amp; Regulation</span><span class="domain">Antitrust &amp; Competition Policy</span></div>
   </div>
 
-
-  <!--  <div class="pub-item">
-    <div class="pub-title-plain">Locus of Organizational Bias. <span class="summary-meta">Joint with Charles Cameron.</span></div>
+  <div class="pub-item" data-tags="evidence lobbying algogov sciinnov">
+    <div class="pub-title-plain">Artificial Intelligence and the Evidentiary Basis of Policymaking<span class="summary-meta">With Zander Furnas and Dashun Wang.</span></div>
+    <div class="pub-tags"><span>Evidence Use in Policymaking</span><span>Interest Groups &amp; Informational Lobbying</span><span>Algorithmic Governance</span><span class="domain">Science &amp; Innovation Policy</span></div>
   </div>
 
-   <div class="pub-item">
-    <div class="pub-title-plain">Sample Complexity for Open-Ended Responses</div>
-    <p class="pub-coauthors">with Perry Carter and Narrelle Gilchrist</p>
-  </div> -->
-</section>
+  <div class="pub-item" data-tags="firms techchange elections aipolicy">
+    <div class="pub-title-plain">Democratic AI-tocracy</div>
+    <div class="pub-tags"><span>Firms &amp; Nonmarket Strategy</span><span>Politics of Technological Change</span><span>Elections &amp; Accountability</span><span class="domain">AI &amp; Technology Policy</span></div>
+  </div>
 
+  <div class="pub-item" data-tags="algogov textdata bureaucracy aipolicy">
+    <div class="pub-title-plain">Detecting AI-Generated Language in Policy Documents<span class="summary-meta">With Zander Furnas, Yifan Qian, Zhe Wen, and Dashun Wang.</span></div>
+    <div class="pub-tags"><span>Algorithmic Governance</span><span>Text as Data &amp; LLM Measurement</span><span>Bureaucracy &amp; Regulation</span><span class="domain">AI &amp; Technology Policy</span></div>
+  </div>
+
+  <div class="pub-item" data-tags="algogov bureaucracy elections aipolicy">
+    <div class="pub-title-plain">When the State Hands the Red Pen to a Machine</div>
+    <div class="pub-tags"><span>Algorithmic Governance</span><span>Bureaucracy &amp; Regulation</span><span>Elections &amp; Accountability</span><span class="domain">AI &amp; Technology Policy</span></div>
+  </div>
+
+  <div class="pub-item" data-tags="legislative techchange sciinnov">
+    <div class="pub-title-plain">Innovation by Design: How Legislative Institutions Shape the Direction of Federal R&amp;D</div>
+    <div class="pub-tags"><span>Legislative Institutions</span><span>Politics of Technological Change</span><span class="domain">Science &amp; Innovation Policy</span></div>
+  </div>
+
+  <div class="pub-item" data-tags="elections legislative formal">
+    <details>
+      <summary>Decay, Renewal, and the Dynamics of the Presidential Party System<span class="summary-meta">With Charles Cameron.</span></summary>
+      <div class="pub-abstract">
+        Why does neither party dominate American presidential elections permanently? We present the first direct estimates of the major party restoring forces long suspected but never formally identified. We model each party as a "restless bandit" whose performance stochastically decays and renews, and derive the optimal voting rule for a rational electorate. The resulting two-parameter system yields a three-state Markov chain. When decay and renewal rates sum to one, elections become exactly independent, because four years of stochastic evolution erase each party's initial condition. Using annual indicators of presidential performance from 1865 to 2024, we estimate an annual decay rate of 0.48 and a renewal rate of 0.43, placing the system near this knife-edge. The model fits observed run lengths and switching patterns. Rolling-window estimates point to a possible decline in the renewal-to-decay ratio over the twentieth century.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7317441" target="_blank">Paper</a>
+      </div>
+    </details>
+    <div class="pub-tags"><span>Elections &amp; Accountability</span><span>Legislative Institutions</span><span>Formal Theory</span></div>
+  </div>
+
+  <div class="pub-item" data-tags="firms lobbying formal">
+    <details>
+      <summary>Patrons, Citizens, and the Locus of Organizational Bias<span class="summary-meta">With Charles Cameron.</span></summary>
+      <div class="pub-abstract">
+        Why is organized political voice distributed unevenly across citizens' positions and why is the weaker side of a cleavage, when organized at all, so often sustained by a single patron? We model a policy domain as a free-entry game: engaged citizens choose whether to join a group, founders whether and where to enter. Citizen funding alone partitions the engaged public into equal-mass niches, so organized voice tracks the density of engaged opinion and falls silent where it is thin. Committed patrons reshape this field, sustaining groups where citizens cannot, so the field can be biased even when the public is symmetric—the bias tracing to patron supply's skew, not citizen mobilization. This transmission is non-proportional: skew within the citizen-generated zone only relocates voice among already-represented positions, while skew beyond it becomes bias. Organizational bias is thus patron supply filtered through the citizen-made silent zone—largest where citizen demand is thinnest.
+      </div>
+      <div class="pub-paper-link">
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7322958" target="_blank">Paper</a>
+      </div>
+    </details>
+    <div class="pub-tags"><span>Firms &amp; Nonmarket Strategy</span><span>Interest Groups &amp; Informational Lobbying</span><span>Formal Theory</span></div>
+  </div>
+
+  <div class="pub-item" data-tags="measurement design textdata bureaucracy algogov">
+    <details>
+      <summary>Valid Inference with Noisy AI-Text Detectors</summary>
+      <div class="pub-abstract">
+        Federal agencies in the United States gather information from the public through notice-and-comment rulemaking, and political scientists have long used those comments to study who participates and how agencies respond. Agencies are now sorting comments with machine classifiers, by topic, by position, and by whether a comment was written with a language model. This letter asks what such a label can be trusted to mean. The answer depends less on how accurate the classifier is than on how rare the category is. If machine-written comments are two percent of a docket, a classifier that mislabels only five percent of human-written comments is still wrong about three quarters of what it flags, and the objections an agency must answer are often raised by only a handful of commenters. For machine-written text, comments filed before language models were available show how often a detector falsely flags human writing. I show what that alone can support: claims about how much machine-written commenting has grown over time, but not claims about how much of any one docket it makes up, which require assuming the detector never misses a case. A small change in the detector's false-alarm rate can also be mistaken for a trend.
+      </div>
+    </details>
+    <div class="pub-tags"><span>Measurement Error &amp; Predicted Variables</span><span>Research Design &amp; Valid Inference</span><span>Text as Data &amp; LLM Measurement</span><span>Bureaucracy &amp; Regulation</span><span>Algorithmic Governance</span></div>
+  </div>
+
+  <div class="pub-item" data-tags="measurement design textdata">
+    <details>
+      <summary>Sample Complexity for Open-Ended Survey Responses<span class="summary-meta">With Perry Carter and Narrelle Gilchrist.</span></summary>
+      <div class="pub-paper-link">
+        <a href="https://dahyunc.github.io/documents/scb_open.pdf" target="_blank">Poster</a>
+      </div>
+    </details>
+    <div class="pub-tags"><span>Measurement Error &amp; Predicted Variables</span><span>Research Design &amp; Valid Inference</span><span>Text as Data &amp; LLM Measurement</span></div>
+  </div>
+
+  <p class="no-results" id="noResults" style="display:none;">No papers match this tag.</p>
+
+  </section>
+</div>
+</div>
 
 <!-- ══════════════════════════ SOFTWARE ══════════════════════════ -->
-<section class="section" id="software">
+<div class="tab-page" id="page-software">
+<section class="section">
 
   <h3 class="sub-section-title">Software</h3>
 
@@ -526,7 +788,15 @@
     <p class="pub-venue">Available on CRAN · with Perry Carter</p>
   </div>
 
+
+  <h3 class="sub-section-title">Database</h3>
+
+  <div class="pub-item">
+    <div class="pub-title-plain">A Database of United States Federal Regulatory Histories<span class="summary-meta">Coming soon.</span></div>
+  </div>
+
 </section>
+</div>
 
 <script>
   // Accordion: close other details when one opens
@@ -540,77 +810,96 @@
     });
   });
 
-  // Active tab on scroll
-  var stickyWrap = document.getElementById('stickyWrap');
+  // Tag filtering
+  var tagBtns = document.querySelectorAll('.tag-btn');
+  var pubItems = document.querySelectorAll('#page-research .pub-item');
+  var sectionTitles = document.querySelectorAll('#page-research .sub-section-title');
+  var noResults = document.getElementById('noResults');
+
+  tagBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tag = this.getAttribute('data-tag');
+      tagBtns.forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+
+      var anyVisible = false;
+      var sectionHasVisible = { pubs: false, wp: false };
+
+      pubItems.forEach(function(item) {
+        var tags = (item.getAttribute('data-tags') || '').split(' ');
+        var show = (tag === 'all') || tags.indexOf(tag) !== -1;
+        item.classList.toggle('hidden', !show);
+        if (show) {
+          anyVisible = true;
+          // Determine which section this item belongs to
+          var prev = item.previousElementSibling;
+          while (prev && !prev.classList.contains('sub-section-title')) prev = prev.previousElementSibling;
+          if (prev) {
+            var sec = prev.getAttribute('data-section');
+            if (sec) sectionHasVisible[sec] = true;
+          }
+        }
+      });
+
+      sectionTitles.forEach(function(t) {
+        var sec = t.getAttribute('data-section');
+        t.classList.toggle('hidden', !sectionHasVisible[sec]);
+      });
+
+      if (noResults) noResults.style.display = anyVisible ? 'none' : 'block';
+    });
+  });
+
+  // Tab switching
   var navLinks = document.querySelectorAll('.nav-tabs a');
-  var sections = [];
+  var pages = {
+    'home': document.getElementById('page-home'),
+    'research': document.getElementById('page-research'),
+    'software': document.getElementById('page-software')
+  };
+
+  function showPage(id) {
+    Object.keys(pages).forEach(function(key) {
+      if (pages[key]) pages[key].classList.toggle('active', key === id);
+    });
+    navLinks.forEach(function(l) {
+      var href = l.getAttribute('href');
+      l.classList.toggle('active', href === '#' + id);
+    });
+    window.scrollTo({ top: 0 });
+  }
+
   navLinks.forEach(function(link) {
     var href = link.getAttribute('href');
     if (href && href.startsWith('#')) {
-      var id = href.slice(1);
-      var el = document.getElementById(id);
-      if (el) sections.push({ el: el, link: link });
-
-      // Custom scroll on click
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        if (id === 'home') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          // After scrolling the header is compact; measure that height for an accurate offset
-          var isMobile = window.matchMedia('(max-width: 700px)').matches;
-          var offset = 20;
-          if (!isMobile) {
-            if (stickyWrap) stickyWrap.classList.add('scrolled');
-            var hdr = document.querySelector('.site-header');
-            offset = (hdr ? hdr.offsetHeight : 70) + 12;
-          }
-          var targetY = el.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top: targetY, behavior: 'smooth' });
-        }
+        showPage(href.slice(1));
       });
     }
   });
 
-  function syncHeaderState() {
-    // Compact (shrunk) header once scrolled — desktop only (mobile header is not sticky)
-    if (stickyWrap) {
-      var isDesktop = window.matchMedia('(min-width: 701px)').matches;
-      if (isDesktop && window.scrollY > 50) {
-        stickyWrap.classList.add('scrolled');
-      } else {
-        stickyWrap.classList.remove('scrolled');
-      }
-    }
-    // Active tab
-    var scrollPos = window.scrollY + 150;
-    var current = sections[0];
-    for (var i = 0; i < sections.length; i++) {
-      if (sections[i].el.offsetTop <= scrollPos) {
-        current = sections[i];
-      }
-    }
-    navLinks.forEach(function(l) {
-      if (l.getAttribute('href') && l.getAttribute('href').startsWith('#')) {
-        l.classList.remove('active');
-      }
+  // "View All →" and nav-name go to pages too
+  document.querySelectorAll('.view-all').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      showPage('research');
     });
-    if (current) current.link.classList.add('active');
+  });
+  var navName = document.querySelector('.nav-name');
+  if (navName) {
+    navName.addEventListener('click', function(e) {
+      e.preventDefault();
+      showPage('home');
+    });
   }
-  window.addEventListener('scroll', syncHeaderState);
-  window.addEventListener('resize', syncHeaderState);
-  syncHeaderState();
 
   // Email
   var u = 'dahyun.choi'; var d = 'kellogg.northwestern.edu';
-  var headerEmail = document.getElementById('header-email');
-  if (headerEmail) {
-    var a = document.createElement('a');
-    a.href = 'mai' + 'lto:' + u + '@' + d;
-    a.textContent = u + '@' + d;
-    a.style.color = 'var(--color-link)';
-    a.style.textDecoration = 'none';
-    headerEmail.appendChild(a);
+  var emailLink = document.getElementById('email-link');
+  if (emailLink) {
+    emailLink.href = 'mai' + 'lto:' + u + '@' + d;
+    emailLink.title = u + '@' + d;
   }
 </script>
 
